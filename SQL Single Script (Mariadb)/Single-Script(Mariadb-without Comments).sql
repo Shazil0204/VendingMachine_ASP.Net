@@ -23,7 +23,7 @@ CREATE TABLE DBRecords(
 	DBID INT AUTO_INCREMENT PRIMARY KEY,
 	DBName VARCHAR(50)
 );
-CREATE PROCEDURE [CREATING_VM]
+CREATE PROCEDURE CREATING_VM
     @CITY VARCHAR(100),
     @RESULT INT OUTPUT
 AS
@@ -32,8 +32,8 @@ BEGIN
     DECLARE @SQL NVARCHAR(MAX);
     SET @RESULT = -3;
     IF EXISTS (
-    SELECT name 
-    FROM sys.databases 
+    SELECT SCHEMA_NAME 
+    FROM information_schema.schemata 
     WHERE name = @CITY + '_VM'
     )
     BEGIN
@@ -109,8 +109,8 @@ BEGIN
 	SET NOCOUNT ON;
 	DECLARE @SQL NVARCHAR(MAX);
 	IF EXISTS (
-        SELECT name 
-        FROM sys.databases 
+        SELECT SCHEMA_NAME 
+        FROM information_schema.schemata 
         WHERE name = @DBName
     )
     BEGIN
@@ -163,8 +163,8 @@ BEGIN
     SET NOCOUNT ON;
     DECLARE @SQL NVARCHAR(MAX);
     IF EXISTS (
-        SELECT name 
-        FROM sys.databases 
+        SELECT SCHEMA_NAME 
+        FROM information_schema.schemata 
         WHERE name = @DBName
     )
     BEGIN
@@ -190,7 +190,7 @@ BEGIN
         PRINT 'SYSTEM CAN''T FIND A DATABASE WITH THIS NAME';
     END
 END;
-CREATE PROCEDURE [DELETING_VM]
+CREATE PROCEDURE DELETING_VM
     @CITY VARCHAR(100),
     @RESULT INT OUTPUT
 AS

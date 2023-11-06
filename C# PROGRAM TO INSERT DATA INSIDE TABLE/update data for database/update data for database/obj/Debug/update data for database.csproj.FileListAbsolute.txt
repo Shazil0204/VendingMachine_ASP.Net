@@ -1,7 +1,0 @@
-C:\Users\Shaz0184\Desktop\VM DATABASE\Database-for-Vending-Machine\C# PROGRAM TO INSERT DATA INSIDE TABLE\update data for database\update data for database\bin\Debug\update data for database.exe.config
-C:\Users\Shaz0184\Desktop\VM DATABASE\Database-for-Vending-Machine\C# PROGRAM TO INSERT DATA INSIDE TABLE\update data for database\update data for database\bin\Debug\update data for database.exe
-C:\Users\Shaz0184\Desktop\VM DATABASE\Database-for-Vending-Machine\C# PROGRAM TO INSERT DATA INSIDE TABLE\update data for database\update data for database\bin\Debug\update data for database.pdb
-C:\Users\Shaz0184\Desktop\VM DATABASE\Database-for-Vending-Machine\C# PROGRAM TO INSERT DATA INSIDE TABLE\update data for database\update data for database\obj\Debug\update data for database.csproj.AssemblyReference.cache
-C:\Users\Shaz0184\Desktop\VM DATABASE\Database-for-Vending-Machine\C# PROGRAM TO INSERT DATA INSIDE TABLE\update data for database\update data for database\obj\Debug\update data for database.csproj.CoreCompileInputs.cache
-C:\Users\Shaz0184\Desktop\VM DATABASE\Database-for-Vending-Machine\C# PROGRAM TO INSERT DATA INSIDE TABLE\update data for database\update data for database\obj\Debug\update data for database.exe
-C:\Users\Shaz0184\Desktop\VM DATABASE\Database-for-Vending-Machine\C# PROGRAM TO INSERT DATA INSIDE TABLE\update data for database\update data for database\obj\Debug\update data for database.pdb

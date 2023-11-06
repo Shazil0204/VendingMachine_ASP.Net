@@ -1,45 +1,25 @@
 DELIMITER //
 
-CREATE PROCEDURE UPDATE_VM(
-    IN DBName VARCHAR(50),
-    IN ProductID INT,
-    IN ProductName VARCHAR(30),
-    IN ProductURL TEXT,
-    IN Stock INT,
-    IN Price INT,
-    IN BrandID INT,
-    IN TypeID INT,
-    OUT RESULT INT
-)
+CREATE PROCEDURE DELETING_VM(IN CITY VARCHAR(100), OUT RESULT INT)
 BEGIN
     DECLARE v_SQL TEXT;
 
-    -- Check if the database exists
-    IF EXISTS (
-        SELECT schema_name 
-        FROM information_schema.schemata 
-        WHERE schema_name = DBName
-    ) THEN
-        -- Prepare the update statement
-        SET v_SQL = CONCAT('UPDATE `', DBName, '`.Products SET 
-            ProductName = ?', 
-            ', ProductURL = ?', 
-            ', Stock = ?', 
-            ', Price = ?', 
-            ', BrandID = ?', 
-            ', TypeID = ? 
-        WHERE ProductID = ?');
-
-        -- Execute the prepared statement with provided parameters
+    -- Check if the Database name exists in the DBRecords table
+    IF EXISTS (SELECT 1 FROM DBRecords WHERE DBName = CITY) THEN
+        -- Drop the database
+        SET v_SQL = CONCAT('DROP DATABASE `', CITY, '`');
         PREPARE stmt FROM v_SQL;
-        EXECUTE stmt USING ProductName, ProductURL, Stock, Price, BrandID, TypeID, ProductID;
+        EXECUTE stmt;
         DEALLOCATE PREPARE stmt;
 
+        -- Delete the record from the DBRecords table
+        DELETE FROM DBRecords WHERE DBName = CITY;
+
         SET RESULT = 0; -- Indicating success
-        SELECT CONCAT('SYSTEM HAVE UPDATED TABLE IN DATABASE `', DBName, '` SUCCESSFULLY');
+        SELECT 'DONE';
     ELSE
-        SET RESULT = -1; -- Database not found
-        SELECT 'SYSTEM CAN''T FIND A DATABASE WITH THIS NAME';
+        SET RESULT = -1; -- Database not found in DBRecords
+        SELECT 'THERE IS NO DATABASE WITH THIS NAME. PLEASE CHECK YOUR INSERT TEXT AGAIN THANKS!';
     END IF;
 END //
 

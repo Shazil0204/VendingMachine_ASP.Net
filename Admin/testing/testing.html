@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* Define styles for the grid container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(9, 3fr);
+      /* gap: 10px; */
+    }
+
+    /* Define styles for the grid items (rounded boxes) */
+    .grid-item {
+      border-radius: 15px;
+      background-color: #f3f3f3;
+      padding: 20px;
+      width: 10%;
+      height: 20%;
+      text-align: center;
+    }
+
+    /* Define styles for the SVG images (assuming SVG files are named "beverage1.svg", "beverage2.svg", etc.) */
+    .beverage-svg {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+
+    <div class="grid-container">
+      <!-- First Row -->
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage1.svg"></use>
+        </svg>
+      </div>
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage2.svg"></use>
+        </svg>
+      </div>
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage3.svg"></use>
+        </svg>
+      </div>
+      <!-- Second Row -->
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage4.svg"></use>
+        </svg>
+      </div>
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage5.svg"></use>
+        </svg>
+      </div>
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage6.svg"></use>
+        </svg>
+      </div>
+      <!-- Third Row -->
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage7.svg"></use>
+        </svg>
+      </div>
+      <div class="grid-item">
+        <svg class="beverage-svg">
+          <use xlink:href="beverage8.svg"></use>
+        </svg>
+      </div>
+      <div class="grid-item">
+        <!-- Add your own beverage SVG here -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

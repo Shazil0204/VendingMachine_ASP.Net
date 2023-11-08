@@ -1,11 +1,11 @@
-Body {
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin: 0%;
 }
 
 .Create-container {
@@ -24,11 +24,11 @@ Body {
     color: #3c4fe0;
 }
 
-.login-box form {
+.Create-box form {
     margin-top: 20px;
 }
 
-.login-box input {
+.Create-box input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -37,7 +37,7 @@ Body {
     font-size: 16px;
 }
 
-.login-box button {
+.Create-box button {
     width: 100%;
     padding: 10px;
     background-color: #4285f4;

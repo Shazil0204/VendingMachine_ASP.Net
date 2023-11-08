@@ -1,86 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <style>
-    /* Define styles for the grid container */
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(9, 3fr);
-      /* gap: 10px; */
-    }
-
-    /* Define styles for the grid items (rounded boxes) */
-    .grid-item {
-      border-radius: 15px;
-      background-color: #f3f3f3;
-      padding: 20px;
-      width: 10%;
-      height: 20%;
-      text-align: center;
-    }
-
-    /* Define styles for the SVG images (assuming SVG files are named "beverage1.svg", "beverage2.svg", etc.) */
-    .beverage-svg {
-      width: 100px;
-      height: 100px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>Create Vending Machine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/styles.css" rel="stylesheet">
+    <link href="testing.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
+  <div class="Create-container">
+ 
+    <div class="Create-box">
+        <h2>Decomission of a Vending Machine</h2>
+        <p> Welcome, Administrator. Proceed with precision:
+            This is your hub for decommissioning a Vending Machine.
+            Ensure to review all details carefully before confirming the removal. </p>
+            
+            <form>
+                <input type="text" placeholder="City Name" required>
 
-
-    <div class="grid-container">
-      <!-- First Row -->
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage1.svg"></use>
-        </svg>
-      </div>
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage2.svg"></use>
-        </svg>
-      </div>
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage3.svg"></use>
-        </svg>
-      </div>
-      <!-- Second Row -->
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage4.svg"></use>
-        </svg>
-      </div>
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage5.svg"></use>
-        </svg>
-      </div>
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage6.svg"></use>
-        </svg>
-      </div>
-      <!-- Third Row -->
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage7.svg"></use>
-        </svg>
-      </div>
-      <div class="grid-item">
-        <svg class="beverage-svg">
-          <use xlink:href="beverage8.svg"></use>
-        </svg>
-      </div>
-      <div class="grid-item">
-        <!-- Add your own beverage SVG here -->
-      </div>
+                <button type="submit">Next</button>
+            </form>
+            type <div class="options">
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>

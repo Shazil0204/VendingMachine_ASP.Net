@@ -1,0 +1,23 @@
+﻿.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the space between cards */
+    justify-content: center;
+}
+
+.card {
+    flex: 0 0 calc(33.333% - 10px); /* three items per row minus gap */
+    border: 1px solid #ccc; /* card border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* card shadow */
+    margin-bottom: 10px; /* space below each card */
+}
+
+    .card img {
+        width: 100%; /* ensures the image covers the card width */
+        display: block; /* removes bottom space under the image */
+    }
+
+.card-text {
+    padding: 10px;
+    text-align: center;
+}

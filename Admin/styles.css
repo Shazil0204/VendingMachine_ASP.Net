@@ -150,3 +150,7 @@ h3 {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+.home{
+    width: 50px;
+    height: auto;
+}

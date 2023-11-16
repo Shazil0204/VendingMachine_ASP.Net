@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RQn8ZqU1PulM8j9bNhjXzOdxaIjsmWnjcIPEGA7LTUuewYAVkzeUsHtth944yuJ3CPEkqP1W8MiWhhDoxcaysQ==",
+  "dgSpecHash": "xg3eVJE7Xbn+vTMStVkjHHEMTWp0wZO6Pgy1MoERttUsFqp98h+pEwbzEy++pkkX/wyWGAYCFAYcdA4QUpgs3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
+  "projectFilePath": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shaz0184\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Shaz0184\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -2008,11 +2008,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
+      "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
       "projectName": "AdminSide",
-      "projectPath": "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
+      "projectPath": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
       "packagesPath": "C:\\Users\\Shaz0184\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\obj\\",
+      "outputPath": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Shaz0184\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2065,7 +2065,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

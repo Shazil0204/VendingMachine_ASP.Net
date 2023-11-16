@@ -1,12 +1,12 @@
 ﻿body {
-    font-family: Arial, sans-serif;
+    /*font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0%;
-    width: 100%;
+    width: 100%;*/
 }
 
 .center-wrapper {
@@ -23,6 +23,14 @@
     padding: 20px;
     width: 350px;
     text-align: center;
+}
+
+.visible {
+    display: block;
+}
+
+#second-step {
+    display: none;
 }
 
 .Create-box h2 {
@@ -73,3 +81,5 @@ a:hover {
 .side-by-side {
     margin-right: 10px;
 }
+
+

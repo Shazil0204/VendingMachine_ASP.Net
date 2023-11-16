@@ -6,50 +6,134 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>Remove City</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="/css/admin.css" rel="stylesheet">
-    <link href="/css/updateVM.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<title>Remove City</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="/css/admin.css" rel="stylesheet">
+	<link href="/css/updateVM.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="center-wrapper">
-        <div class="Create-container">
+	<div class="center-wrapper">
+		<div class="Create-container">
+			<div class="Create-box">
 
-            <div class="Create-box">
-                <h2>Update Vending Machine</h2>
-                <p class="Info">Enter the new information on the product you want to add to the vending machine</p>
-                <form>
-                    <input type="text" placeholder="Vending Machine Name" required>
-                    <div style="display: flex;">
-                        <input type="text" placeholder="Old product" required>
-                        <div class="side-by-side">
-                        </div>
-                        <input type="text" placeholder="New Product" required>
-                    </div>
-                    <div style="display: flex;">
-                        <input type="text" placeholder="Old Brand" required>
-                        <div class="side-by-side">
-                        </div>
-                        <input type="text" placeholder="New Brand" required>
-                    </div>
-                    <div style="display: flex;">
-                        <input type="text" placeholder="Old Price" required>
-                        <div class="side-by-side">
-                        </div>
-                        <input type="text" placeholder="New Price" required>
-                    </div>
-                    <!-- <input type="text" placeholder="Brand" required>
-                    <input type="text" placeholder="Price" required> -->
-                    <button type="submit">Next</button>
-                </form>
-            </div>
-        </div>
-    </div>
+				<h2>Update Vending Machine</h2>
+
+				<p class="Info">Enter the new information on the product you want to add to the vending machine</p>
+
+				<div id="first-step" class="visible">
+
+					<input type="text" style="text-align:center;" value="VendingMachine" text readonly>
+
+					<input type="text" placeholder="Old product">
+
+					<div class="d-flex">
+
+						<a asp-page="/Admin">
+
+							<button type="submit" style="margin-top: 1vh; height: 5vh;" onclick="UPVMBack()">Back</button>
+
+						</a>
+
+						<div style="margin: 5px;"></div>
+
+						<button type="submit" style="margin-top: 1vh; height: 5vh;" onclick="UPVMNext()">Next</button>
+
+					</div>
+
+				</div>
+
+				<div id="second-step"  class="hidden">
+
+					<input type="text" placeholder="over here C# variable for VM" />
+
+					<div class="d-flex">
+
+						<input type="text" placeholder="over here C# variable for old product" />
+
+						<div class="side-by-side"></div>
+
+						<input type="text" placeholder="New Product" />
+
+					</div>
+
+					<div class="d-flex">
+
+						<input type="text" placeholder="over here C# variable for old Brand" />
+
+						<div class="side-by-side"></div>
+
+						<input type="text" placeholder="New Brand" />
+
+					</div>
+
+					<div class="d-flex">
+
+						<input type="text" placeholder="over here C# variable for old Price" />
+
+						<div class="side-by-side"></div>
+
+						<input type="text" placeholder="New Price" />
+
+					</div>
+
+					<div class="d-flex">
+
+						<button type="submit" style="margin-top: 1vh; height: 5vh;" onclick="BackToPName()">Back</button>
+
+						<div style="margin: 5px;"></div>
+
+						<button type="submit" style="margin-top: 1vh; height: 5vh;" onclick="UPVMContinue()">Next</button>
+
+					</div>
+
+				</div>
+
+				<script>
+					function UPVMNext() {
+						// Get references to the first-step and second-step divs
+						var firstStepDiv = document.getElementById("first-step");
+						var secondStepDiv = document.getElementById("second-step");
+
+						// Check if the first-step div is currently visible
+						if (firstStepDiv.style.display !== "none") {
+							// Hide the first-step div and show the second-step div
+							firstStepDiv.style.display = "none";
+							secondStepDiv.style.display = "block";
+						} else {
+							// If the first-step div is already hidden, you can choose to handle this case as needed
+							// For example, you can do nothing or show an error message.
+						}
+					}
+				</script>
+
+				<script>
+					function BackToPName() {
+						// Get references to the first-step and second-step divs
+						var firstStepDiv = document.getElementById("first-step");
+						var secondStepDiv = document.getElementById("second-step");
+
+						// Check if the first-step div is currently visible
+						if (secondStepDiv.style.display !== "none") {
+							// Hide the first-step div and show the second-step div
+							secondStepDiv.style.display = "none";
+							firstStepDiv.style.display = "block";
+						} else {
+							// If the first-step div is already hidden, you can choose to handle this case as needed
+							// For example, you can do nothing or show an error message.
+						}
+					}
+				</script>
+
+
+			</div>
+		</div>
+	</div>
+
 </body>
 
 </html>

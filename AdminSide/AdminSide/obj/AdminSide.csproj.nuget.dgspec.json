@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shaz0184\\Desktop\\asp\\AdminSide\\AdminSide\\AdminSide.csproj": {}
+    "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shaz0184\\Desktop\\asp\\AdminSide\\AdminSide\\AdminSide.csproj": {
+    "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\asp\\AdminSide\\AdminSide\\AdminSide.csproj",
+        "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
         "projectName": "AdminSide",
-        "projectPath": "C:\\Users\\Shaz0184\\Desktop\\asp\\AdminSide\\AdminSide\\AdminSide.csproj",
+        "projectPath": "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
         "packagesPath": "C:\\Users\\Shaz0184\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shaz0184\\Desktop\\asp\\AdminSide\\AdminSide\\obj\\",
+        "outputPath": "C:\\Users\\Shaz0184\\Desktop\\   \\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shaz0184\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

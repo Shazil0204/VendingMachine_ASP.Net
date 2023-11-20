@@ -24,11 +24,21 @@
             <div class="Create-box">
                 <h2>Remove city</h2>
                 <p class="Info">Enter the city name that should be removed from the database</p>
-                <form>
                     <input type="text" placeholder="City Name" required>
 
-                    <button type="submit">Next</button>
-                </form>
+                    <div class="d-flex">
+
+                        <a asp-page="/Admin">
+
+                            <button type="submit" style="margin-top: 1vh; height: 5vh;">Back</button>
+
+                        </a>
+
+                        <div style="margin: 5px;"></div>
+
+                        <button type="submit" style="margin-top: 1vh; height: 5vh;">Next</button>
+
+                    </div>
             </div>
         </div>
     </div>

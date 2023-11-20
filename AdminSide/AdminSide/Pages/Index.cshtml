@@ -1,11 +1,78 @@
-﻿@page
+﻿@page "/"
+
 @model IndexModel
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Kroells Vending";
+    
+    @inject Microsoft.AspNetCore.Components.NavigationManager navigation;
+    
+    void NavigateToAdmin()
+    {
+        navigation.NavigateTo("/Admin");
+    } 
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a asp-page="/Admin">Go to admin page</a>.</p>
-    <p>Learn about <a asp-page="/deleteVM" >Go to admin page</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="css/client-side.css">
+	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+<body>
+	<div class="navbarI">
+        <div class="company-name">
+	        <div class="company-text">Kroell's vending machines</div>
+	    </div>
+        <a asp-page="/Admin"><button class="admin-button" role="button">Admin Panel</button></a>
+        <button class="locations-button" role="modal">Locations</button>
+    </div>
+    <div class="vending-machine-wrapper">
+        <div class="vending-machine-container">
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" />1</div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" />2</div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
+            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+        </div>
+        <div class="vending-machine-keypad">
+            <button class="vending-machine-keypad-item">1</button>
+            <button class="vending-machine-keypad-item">2</button>
+            <button class="vending-machine-keypad-item">3</button>
+            <button class="vending-machine-keypad-item">4</button>
+            <button class="vending-machine-keypad-item">5</button>
+        </div>
+    </div>
+</body>
+
+</html>

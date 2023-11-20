@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\css\\checkbox.css"
     },
     {
+      "Id": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\wwwroot\\css\\client-side.css",
+      "PackagePath": "staticwebassets\\css\\client-side.css"
+    },
+    {
       "Id": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\wwwroot\\css\\createCity.css",
       "PackagePath": "staticwebassets\\css\\createCity.css"
     },

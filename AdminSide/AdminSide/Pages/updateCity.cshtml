@@ -15,19 +15,30 @@
     <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/updateCity.css" rel="stylesheet">
 </head>
-
 <body>
     <div class="center-wrapper">
         <div class="Create-container">
             <div class="Create-box">
                 <h2>Update City Name</h2>
                 <p class="Info">Enter the previous city name and the new city name of which you want to update</p>
-                <form>
-                    <input type="text" placeholder="Previous City Name" required>
-                    <input type="text" placeholder="Update City Name" required>
 
-                    <button type="submit">Next</button>
-                </form>
+                <input type="password" placeholder="Previous City Name" required />
+                <input type="text" placeholder="Update City Name"required />
+
+                <div class="d-flex">
+
+                    <a asp-page="/Admin">
+
+                        <button type="submit" style="margin-top: 1vh; height: 5vh;">Back</button>
+
+                    </a>
+
+                    <div style="margin: 5px;"></div>
+
+                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Next</button>
+
+                </div>
+
             </div>
         </div>
     </div>

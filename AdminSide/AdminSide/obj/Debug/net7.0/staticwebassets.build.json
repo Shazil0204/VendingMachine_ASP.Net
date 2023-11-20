@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WW7NyQC5yw3HuvmNO62ylBt2IBiGd1Pw83tIYL9L64Y=",
+  "Hash": "rgmcwkxmKvM3/W4Srja4glrwjsorj+DYxjAmlMTa2QU=",
   "Source": "AdminSide",
   "BasePath": "_content/AdminSide",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\checkbox.css"
+    },
+    {
+      "Identity": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\wwwroot\\css\\client-side.css",
+      "SourceId": "AdminSide",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\wwwroot\\",
+      "BasePath": "_content/AdminSide",
+      "RelativePath": "css/client-side.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\client-side.css"
     },
     {
       "Identity": "C:\\Users\\Shaz0184\\Desktop\\removing\\part 1\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\wwwroot\\css\\createCity.css",

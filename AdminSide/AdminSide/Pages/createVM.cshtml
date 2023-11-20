@@ -22,11 +22,22 @@
             <div class="Create-box">
                 <h2>Create a new Vending Machine</h2>
                 <p class="Info">Enter the city name of where the new vending machine should be located</p>
-                <form>
+                
                     <input type="text" placeholder="City Name" required>
 
-                    <button type="submit">Next</button>
-                </form>
+                    <div class="d-flex">
+
+                        <a asp-page="/Admin">
+
+                            <button type="submit" style="margin-top: 1vh; height: 5vh;">Back</button>
+
+                        </a>
+
+                        <div style="margin: 5px;"></div>
+
+                        <button type="submit" style="margin-top: 1vh; height: 5vh;">Next</button>
+
+                    </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": ".NET Core Launch (web)",
+          "type": "coreclr",
+          "request": "launch",
+          "preLaunchTask": "dotnet: build",
+          "serverReadyAction": {
+            "action": "openExternally",
+            "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+          },
+          "program": "${workspaceFolder}/AdminSide/bin/Debug/net7.0/AdminSide.dll", // Adjust the path to your DLL
+          "args": [],
+          "cwd": "${workspaceFolder}",
+          "stopAtEntry": false,
+          "env": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+          },
+          "sourceFileMap": {
+            "/Views": "${workspaceFolder}/Views"
+          }
+        }
+  ]
+}

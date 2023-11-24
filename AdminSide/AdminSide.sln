@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminSide", "AdminSide\AdminSide.csproj", "{E9567D3E-4DCC-4A0F-9616-7E7C4D2B4C25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminSide", "AdminSide\AdminSide.csproj", "{E9567D3E-4DCC-4A0F-9616-7E7C4D2B4C25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

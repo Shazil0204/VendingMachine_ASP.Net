@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AdminSide.Pages
 {
-    public class updateVMModel : PageModel
+    public class updateBrandModel : PageModel
     {
         public void OnGet()
         {

@@ -4,75 +4,81 @@
 
 @{
     ViewData["Title"] = "Kroells Vending";
-    
-    @inject Microsoft.AspNetCore.Components.NavigationManager navigation;
-    
-    void NavigateToAdmin()
-    {
-        navigation.NavigateTo("/Admin");
-    } 
-
+    decimal balance = 500.00m;
+    AdminSide.Database.Product productData = new AdminSide.Database.Product();
+    List<AdminSide.Database.Product> products = productData.GetProducts();
 }
 
+<!-- LONG LIVE PLAGIARISM -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="css/client-side.css">
-	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/client-side.css">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
+
 <body>
-	<div class="navbarI">
+    <div class="navbarI">
         <div class="company-name">
-	        <div class="company-text">Kroell's vending machines</div>
-	    </div>
-        <a asp-page="/Admin"><button class="admin-button" role="button">Admin Panel</button></a>
-        <button class="locations-button" role="modal">Locations</button>
+            <div class="company-text">Kroell's vending machines</div>
+        </div>
+        <button id="loginBtn" class="admin-button" role="button">Admin Panel</button>
+        <a asp-page="/showAll"><button class="locations-button" role="modal">Locations</button></a>
     </div>
+
+    <div id="loginModal" class="modalI">
+        <div class="modal-contentI">
+            <span class="close-modalI" onclick="closeModal()">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter your username" name="username" required>
+
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter your password" name="password" required>
+
+                <div class="remember">
+                    <input type="checkbox" name="remember"> Remember me </input>
+                </div>
+
+                <a asp-page="/Admin"><button type="button" onclick="login()">Login</button></a>
+            </form>
+        </div>
+    </div>
+
     <div class="vending-machine-wrapper">
         <div class="vending-machine-container">
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" />1</div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" />2</div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
-            <div class="vending-machine-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nescaf%C3%A9_wordmark.svg/320px-Nescaf%C3%A9_wordmark.svg.png" /></div>
-            <div class="vending-machine-item"><img src="https://www.svgrepo.com/show/303358/pepsi-logo.svg" /></div>
+            @foreach (AdminSide.Database.Product product in products)
+            {
+                decimal price = product.Price;
+                string img = product.ImageLink;
+                string name = product.Name;
+
+                <div class="vending-machine-item" data-tooltip="PRODUCT PRICE: @price">
+                    <img src="@img" />
+                    <button class="buy-item" data-product="@name" data-price="@price">SELECT</button>
+                </div>
+            }
         </div>
-        <div class="vending-machine-keypad">
-            <button class="vending-machine-keypad-item">1</button>
-            <button class="vending-machine-keypad-item">2</button>
-            <button class="vending-machine-keypad-item">3</button>
-            <button class="vending-machine-keypad-item">4</button>
-            <button class="vending-machine-keypad-item">5</button>
+    <div class="selection-container">
+    <div class="display">
+    <p>Balance: @balance Kr </p>
+    </div>
+        <div class="selection-showcase">
+            <section>
+            <p></P>
+                <article class="item">
+                    <p class="order-product"></p><p class="price"></p>
+                </article>
+            </section>
         </div>
     </div>
+    </div>   
 </body>
 
 </html>

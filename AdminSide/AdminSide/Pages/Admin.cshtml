@@ -4,7 +4,6 @@
     int i = 2;
 }
 
-
 @if(i == 2)
 {
     <!DOCTYPE html>
@@ -30,23 +29,50 @@
                             <!-- will use this to create vending_machine -->
                             <a asp-page="/createVM">
                                 <button>
-                                    <img src="/Images/1Create.png" alt="create vending machine">
+                                    <img src="/Images/1.png" alt="create vending machine">
                                 </button>
                             </a>
                         </div>
                         <div class="delete_vm black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to delete vending_machine -->
-                            <a asp-page="/deleteVM">
+                            <!-- will use this to update Product -->
+                            <a asp-page="/updateProduct">
                                 <button>
-                                    <img src="/Images/2Delete.png" alt="delete vending machine">
+                                    <img src="/Images/2.png" alt="update Product">
                                 </button>
                             </a>
                         </div>
                         <div class="insert_city black-border-inside flex-fill">
-                            <!-- will use this to insert a new city -->
+                            <!-- will use this to remove a new VM -->
+                            <a asp-page="/deleteVM">
+                                <button>
+                                    <img src="/Images/3.png" alt="Remove vending machine">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="black-border flex-fill">
+                        <!-- This is to show options -->
+                        <div class="update_vm black-border-inside flex-fill " id="sidebar">
+                            <!-- will use this to create a city-->
                             <a asp-page="/createCity">
                                 <button>
-                                    <img src="/Images/3InsertACity.png" alt="insert a city">
+                                    <img src="/Images/4.png" alt="Create a city">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="show_vms black-border-inside flex-fill" id="sidebar">
+                            <!-- will use this to Update a city-->
+                            <a asp-page="/updateCity">
+                                <button>
+                                    <img src="/Images/5.png" alt="Update a city">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="remove_city black-border-inside flex-fill  sidebar">
+                            <!-- will use this to Remove a city-->
+                            <a asp-page="/deleteCity">
+                                <button>
+                                    <img src="/Images/6.png" alt="Remove a city">
                                 </button>
                             </a>
                         </div>
@@ -57,7 +83,7 @@
                             <!-- will use this to show vending_machine -->
                             <a asp-page="/index">
                                 <button id="vending_machine">
-                                    <img id="vending_machine-main-img" src="/Images/4VendingMachine.png"
+                                    <img id="vending_machine-main-img" src="/Images/7.png"
                                          alt="vending machine">
                                 </button>
                             </a>
@@ -67,10 +93,10 @@
                             <h3> Vending Machine City Name </h3>
                         </div>
                         <div class="update_city black-border-inside flex-fill">
-                            <!-- will use this to update city name -->
-                            <a asp-page="/updateCity">
+                            <!-- will use this to Show All vending machine -->
+                            <a asp-page="/showAll">
                                 <button>
-                                    <img src="/Images/6UpdateACity.png" alt="update a city">
+                                    <img src="/Images/9.png" alt="Show All vending machine">
                                 </button>
                             </a>
                         </div>
@@ -78,26 +104,53 @@
                     <div class="black-border flex-fill">
                         <!-- This is to show options -->
                         <div class="update_vm black-border-inside flex-fill " id="sidebar">
-                            <!-- will use this to update vending_machine -->
-                            <a asp-page="/UpdateVM">
+                            <!-- will use this to Create Brand -->
+                            <a asp-page="/Create_Brand">
                                 <button>
-                                    <img src="/Images/7Update.png" alt="update vending machine">
+                                    <img src="/Images/10.png" alt="Create Brand">
                                 </button>
                             </a>
                         </div>
                         <div class="show_vms black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to show all vending_machine -->
-                            <a asp-page="/showAll">
+                            <!-- will use this to Create Product type -->
+                            <a asp-page="/Product_Type">
                                 <button>
-                                    <img src="/Images/8ShowAll.png" alt="Show all vending machines">
+                                    <img src="/Images/11.png" alt="Create Product type">
                                 </button>
                             </a>
                         </div>
                         <div class="remove_city black-border-inside flex-fill  sidebar">
-                            <!-- will use this to remove city from database -->
-                            <a asp-page="/deleteCity">
+                            <!-- will use this to show Transactions -->
+                            <a asp-page="/Transactions">
                                 <button>
-                                    <img src="/Images/9RemoveACity.png" alt="Remove a city">
+                                    <img src="/Images/12.png" alt="see Transactions">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="black-border flex-fill">
+                        <!-- This is to show options -->
+                        <div class="update_vm black-border-inside flex-fill " id="sidebar">
+                            <!-- will use this to update Brand-->
+                            <a asp-page="/updateBrand">
+                                <button>
+                                    <img src="/Images/13.png" alt="update Brand">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="show_vms black-border-inside flex-fill" id="sidebar">
+                            <!-- will use this to update Product type-->
+                            <a asp-page="/updateProduct_Type">
+                                <button>
+                                    <img src="/Images/14.png" alt="update Product type">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="remove_city black-border-inside flex-fill  sidebar">
+                            <!-- will use this to Sign out-->
+                            <a asp-page="/Index">
+                                <button>
+                                    <img src="/Images/15.png" alt="Sign out">
                                 </button>
                             </a>
                         </div>
@@ -116,11 +169,11 @@ else
  
         <div style="text-align: center;">
  
-        <img src="https://a.thumbs.redditmedia.com/ZCOugTWF3PsViiZ4kFcgnzsvgsb50jd8HfSCH_FgjB0.png" style="height:80vh;">
+            <img src="https://a.thumbs.redditmedia.com/ZCOugTWF3PsViiZ4kFcgnzsvgsb50jd8HfSCH_FgjB0.png" style="height:80vh;">
 
-        <h1 style="margin-top:3vh; color:white; background-color: rgba(0, 0, 0, 0.5);"> you can't access this. Bitch! </h1>
+            <h1 style="margin-top:3vh; color:white; background-color: rgba(0, 0, 0, 0.5);"> you can't access this. Bitch! </h1>
 
-    </div>
+        </div>
 
     </body>
 

@@ -65,7 +65,7 @@ body {
 }
 
 /* This removes additional margins on smaller screens where flex-column is active */
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
     .flex-fill {
         margin: 1rem 0;
         /* Vertical margins only, removes horizontal margins */

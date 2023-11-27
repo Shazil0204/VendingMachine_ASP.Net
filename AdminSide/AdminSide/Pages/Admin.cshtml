@@ -1,6 +1,10 @@
 ﻿@page
 @model AdminSide.Pages.AdminModel
 @{
+
+    AdminSide.Database.ShowAllVM VMS = new AdminSide.Database.ShowAllVM(); 
+
+    string VMName = VMS.currentVM;
     int i = 2;
 }
 
@@ -33,6 +37,14 @@
                                 </button>
                             </a>
                         </div>
+                        <div class="insert_city black-border-inside flex-fill" id="sidebar">
+                            <!-- will use this to Creata a Product -->
+                            <a asp-page="/updateProduct">
+                                <button>
+                                    <img src="/images/12.png" alt="Creata a Product">
+                                </button>
+                            </a>
+                        </div>
                         <div class="delete_vm black-border-inside flex-fill" id="sidebar">
                             <!-- will use this to update Product -->
                             <a asp-page="/updateProduct">
@@ -41,18 +53,10 @@
                                 </button>
                             </a>
                         </div>
-                        <div class="insert_city black-border-inside flex-fill">
-                            <!-- will use this to remove a new VM -->
-                            <a asp-page="/deleteVM">
-                                <button>
-                                    <img src="/Images/3.png" alt="Remove vending machine">
-                                </button>
-                            </a>
-                        </div>
                     </div>
                     <div class="black-border flex-fill">
                         <!-- This is to show options -->
-                        <div class="update_vm black-border-inside flex-fill " id="sidebar">
+                        <div class="update_vm black-border-inside flex-fill" id="sidebar">
                             <!-- will use this to create a city-->
                             <a asp-page="/createCity">
                                 <button>
@@ -68,7 +72,7 @@
                                 </button>
                             </a>
                         </div>
-                        <div class="remove_city black-border-inside flex-fill  sidebar">
+                        <div class="remove_city black-border-inside flex-fill sidebar">
                             <!-- will use this to Remove a city-->
                             <a asp-page="/deleteCity">
                                 <button>
@@ -90,7 +94,7 @@
                         </div>
                         <div class="status black-border-inside flex-fill d-flex">
                             <!-- will use this to show status of vending_machine -->
-                            <h3> Vending Machine City Name </h3>
+                            <h3> @VMName </h3>
                         </div>
                         <div class="update_city black-border-inside flex-fill">
                             <!-- will use this to Show All vending machine -->
@@ -103,7 +107,7 @@
                     </div>
                     <div class="black-border flex-fill">
                         <!-- This is to show options -->
-                        <div class="update_vm black-border-inside flex-fill " id="sidebar">
+                        <div class="update_vm black-border-inside flex-fill" id="sidebar">
                             <!-- will use this to Create Brand -->
                             <a asp-page="/Create_Brand">
                                 <button>
@@ -119,18 +123,18 @@
                                 </button>
                             </a>
                         </div>
-                        <div class="remove_city black-border-inside flex-fill  sidebar">
-                            <!-- will use this to show Transactions -->
-                            <a asp-page="/Transactions">
+                        <div class="remove_city black-border-inside flex-fill sidebar">
+                            <!-- will use this to Remove Vending Machine -->
+                            <a asp-page="/deleteVM">
                                 <button>
-                                    <img src="/Images/12.png" alt="see Transactions">
+                                    <img src="/Images/3.png" alt="Remove Vending Machine">
                                 </button>
                             </a>
                         </div>
                     </div>
                     <div class="black-border flex-fill">
                         <!-- This is to show options -->
-                        <div class="update_vm black-border-inside flex-fill " id="sidebar">
+                        <div class="update_vm black-border-inside flex-fill" id="sidebar">
                             <!-- will use this to update Brand-->
                             <a asp-page="/updateBrand">
                                 <button>
@@ -146,7 +150,7 @@
                                 </button>
                             </a>
                         </div>
-                        <div class="remove_city black-border-inside flex-fill  sidebar">
+                        <div class="remove_city black-border-inside flex-fill sidebar">
                             <!-- will use this to Sign out-->
                             <a asp-page="/Index">
                                 <button>
@@ -164,14 +168,12 @@
 else
 {
     <body style="background-image: url(https://a.thumbs.redditmedia.com/ZCOugTWF3PsViiZ4kFcgnzsvgsb50jd8HfSCH_FgjB0.png);">
-
-        <h1 style="margin-bottom:50px; color:white; background-color: rgba(0, 0, 0, 0.5);">Fuck You If statement works much better than microsoft authorization!</h1>
  
         <div style="text-align: center;">
  
             <img src="https://a.thumbs.redditmedia.com/ZCOugTWF3PsViiZ4kFcgnzsvgsb50jd8HfSCH_FgjB0.png" style="height:80vh;">
 
-            <h1 style="margin-top:3vh; color:white; background-color: rgba(0, 0, 0, 0.5);"> you can't access this. Bitch! </h1>
+            <h1 style="margin-top:3vh; color:white; background-color: rgba(0, 0, 0, 0.5);"> you can't access this! </h1>
 
         </div>
 

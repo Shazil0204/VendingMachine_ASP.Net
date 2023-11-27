@@ -20,17 +20,86 @@ function updateTotalPrice() {
 
 
 $(document).ready(function () {
+    var selectedItems = {}; // Object to store selected items and their quantities
+
     $(".buy-item").click(function () {
         var selectedProduct = $(this).data("product");
         var selectedPrice = $(this).data("price");
 
-        // Create new paragraph elements
-        var productParagraph = $("<p>").addClass("order-product").text("Selected item: " + (selectedProduct || "undefined"));
-        var priceParagraph = $("<p>").addClass("price").text((selectedPrice || "undefined"));
+        // Check if the item is already selected
+        if (selectedItems[selectedProduct]) {
+            // If yes, increment the quantity
+            selectedItems[selectedProduct].quantity++;
+        } else {
+            // If no, add a new entry
+            selectedItems[selectedProduct] = {
+                quantity: 1,
+                price: selectedPrice
+            };
+        }
 
-        // Append new paragraphs to the container
-        $(".selection-showcase .item").append(productParagraph, priceParagraph);
+        // Update the display
+        updateDisplay();
     });
+
+    // Event delegation for remove buttons
+    $(".selection-showcase").on("click", ".remove-item", function () {
+        var selectedProduct = $(this).data("product");
+
+        // Check if the item is selected
+        if (selectedItems[selectedProduct]) {
+            // If yes, decrement the quantity
+            selectedItems[selectedProduct].quantity--;
+
+            // If the quantity becomes 0, remove the item
+            if (selectedItems[selectedProduct].quantity === 0) {
+                delete selectedItems[selectedProduct];
+            }
+
+            // Update the display
+            updateDisplay();
+        }
+    });
+
+    function updateDisplay() {
+        // Clear previous content
+        $(".selection-showcase .item").empty();
+        $(".display p").empty();
+
+        // Display selected items in selection-showcase
+        for (var product in selectedItems) {
+            if (selectedItems.hasOwnProperty(product)) {
+                var quantity = selectedItems[product].quantity;
+
+                var productLine = $("<p>").addClass("order-product").text(quantity + "x " + (product || "undefined"));
+
+                // Create remove button
+                var removeButton = $("<button>").addClass("remove-item").text("Remove").data("product", product);
+
+                // Append elements to the container
+                $(".selection-showcase .item").append(productLine, removeButton);
+            }
+        }
+
+        // Display total price in display
+        var totalPrice = calculateTotalPrice();
+        $(".display p").text("Total Price: " + totalPrice + " Kr");
+    }
+
+    function calculateTotalPrice() {
+        var totalPrice = 0;
+
+        for (var product in selectedItems) {
+            if (selectedItems.hasOwnProperty(product)) {
+                var quantity = selectedItems[product].quantity;
+                var price = selectedItems[product].price;
+
+                totalPrice += quantity * price;
+            }
+        }
+
+        return totalPrice;
+    }
 });
 
 

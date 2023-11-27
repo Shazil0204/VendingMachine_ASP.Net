@@ -1,12 +1,17 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
 
 namespace AdminSide.Database
 {
 	public class ShowAllVM
 	{
-		public List<string> GetCities()
+		public string currentVM {  get; set; }
+
+		public Dictionary<string, bool> GetVendingMachineStatus()
 		{
-			List<string> cities = new List<string>();
+			Dictionary<string, bool> vendingMachines = new Dictionary<string, bool>();
 
 			var config = new ConfigurationBuilder()
 			   .AddJsonFile("appsettings.json")
@@ -16,9 +21,8 @@ namespace AdminSide.Database
 
 			using (SqlConnection connection = new SqlConnection(conn))
 			{
-				string query = "SELECT DBName FROM DBRecords";
-
-				SqlCommand command = new SqlCommand(query, connection);
+				SqlCommand command = new SqlCommand("SHOWALLVENDINGMACHINES", connection);
+				command.CommandType = System.Data.CommandType.StoredProcedure;
 
 				try
 				{
@@ -28,7 +32,10 @@ namespace AdminSide.Database
 
 					while (reader.Read())
 					{
-						cities.Add(reader["DBName"].ToString());
+						string dbName = reader["DBName"].ToString();
+						bool dbStatus = (bool)reader["DBStatus"];
+
+						vendingMachines.Add(dbName, dbStatus);
 					}
 
 					reader.Close();
@@ -40,7 +47,7 @@ namespace AdminSide.Database
 				}
 			}
 
-			return cities;
+			return vendingMachines;
 		}
 	}
 }

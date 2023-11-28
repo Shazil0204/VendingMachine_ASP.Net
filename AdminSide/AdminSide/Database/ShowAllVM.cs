@@ -17,7 +17,7 @@ namespace AdminSide.Database
 			   .AddJsonFile("appsettings.json")
 			   .Build();
 
-			var conn = config.GetConnectionString("TestDB");
+			var conn = config.GetConnectionString("AllVendingMachinesDB");
 
 			using (SqlConnection connection = new SqlConnection(conn))
 			{

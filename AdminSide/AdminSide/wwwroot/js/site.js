@@ -64,27 +64,27 @@ $(document).ready(function () {
     function updateDisplay() {
         // Clear previous content
         $(".selection-showcase .item").empty();
-        $(".display p").empty();
-
+    
         // Display selected items in selection-showcase
         for (var product in selectedItems) {
             if (selectedItems.hasOwnProperty(product)) {
                 var quantity = selectedItems[product].quantity;
-
+    
                 var productLine = $("<p>").addClass("order-product").text(quantity + "x " + (product || "undefined"));
-
+    
                 // Create remove button
                 var removeButton = $("<button>").addClass("remove-item").text("Remove").data("product", product);
-
+    
                 // Append elements to the container
                 $(".selection-showcase .item").append(productLine, removeButton);
             }
         }
-
+    
         // Display total price in display
         var totalPrice = calculateTotalPrice();
         $(".display p").text("Total Price: " + totalPrice + " Kr");
     }
+    
 
     function calculateTotalPrice() {
         var totalPrice = 0;
@@ -109,33 +109,42 @@ var btn = document.getElementById('loginBtn');
 
 var body = document.getElementsByTagName('body');
 
-document.addEventListener('DOMContentLoaded', function() {
-    modal.style.display = 'none';
-});
-
-btn.onclick = function() {
-    modal.style.display = 'block';
-}
-
-function closeModal() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target === modal) {
+    document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
-        body.style.overflow = 'hidden';
+    });
+
+    btn.onclick = function() {
+        modal.style.display = 'block';
     }
-}
 
+    function closeModal() {
+        modal.style.display = 'none';
+    }
 
-function login() {
-    var username = document.getElementsByName('username')[0].value;
-    var password = document.getElementsByName('password')[0].value;
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            body.style.overflow = 'hidden';
 
-    var rememberMe = document.getElementsByName('remember')[0].checked;
-
-    alert('Username: ' + username + '\nPassword: ' + password + '\nRemember Me: ' + rememberMe);
-
-    closeModal();
-}
+        }
+    }
+    $(document).ready(function () {
+        // ... (existing code)
+    
+        // Event listener for the "Clear" button
+        $(".clear-item-btn").on("click", function () {
+            // Remove all selected items from the DOM
+            $(".selection-showcase .item").each(function() {
+                $(this).empty(); // or $(this).remove() to remove the entire item container
+            });
+    
+            // Clear the selectedItems object
+            selectedItems = {};
+    
+            // Update the display
+            updateDisplay();
+        });
+    
+        // ... (existing code)
+    });
+    

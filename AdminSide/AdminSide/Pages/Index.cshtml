@@ -20,11 +20,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/client-side.css">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <title>Kroells vending</title>
 </head>
 
 <body>
     <div class="navbarI">
         <div class="company-name">
+            <img src="https://cdn3.emoji.gg/emojis/3194-steamhappy.png"></img>
             <div class="company-text">Kroell's vending machines</div>
         </div>
         <button id="loginBtn" class="admin-button" role="button">Admin Panel</button>
@@ -35,7 +37,10 @@
         <div class="modal-contentI">
             <span class="close-modalI" onclick="closeModal()">&times;</span>
             <h2>Login</h2>
-            <form>
+            <form method="post">
+                <label for="Employee_Number"><b>Employee Number</b></label>
+                <input type="text" placeholder="Enter your employee number" name="EmployeeNumber" required>
+
                 <label for="username"><b>Username</b></label>
                 <input type="text" placeholder="Enter your username" name="username" required>
 
@@ -46,7 +51,7 @@
                     <input type="checkbox" name="remember"> Remember me </input>
                 </div>
 
-                <a asp-page="/Admin"><button type="button" onclick="login()">Login</button></a>
+                <button type="submit">Login</button>
             </form>
         </div>
     </div>
@@ -76,6 +81,11 @@
                     <p class="order-product"></p><p class="price"></p>
                 </article>
             </section>
+
+        </div>
+            <div class="purchase">
+            <button class="clear-item-btn">Clear</button>
+            <button class="purchase-item-btn">Buy</button>
         </div>
     </div>
     </div>   

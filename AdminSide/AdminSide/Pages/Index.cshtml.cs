@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net.Security;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AdminSide.Pages
 {
@@ -41,6 +43,10 @@ namespace AdminSide.Pages
             {
                 HttpContext.Session.SetInt32("UserId", LoginResult);
                 return RedirectToPage("/Admin");
+            }
+            else 
+            {
+                
             }
 
             return Page();

@@ -129,8 +129,6 @@ var body = document.getElementsByTagName('body');
         }
     }
     $(document).ready(function () {
-        // ... (existing code)
-    
         // Event listener for the "Clear" button
         $(".clear-item-btn").on("click", function () {
             // Remove all selected items from the DOM
@@ -144,7 +142,5 @@ var body = document.getElementsByTagName('body');
             // Update the display
             updateDisplay();
         });
-    
-        // ... (existing code)
     });
     

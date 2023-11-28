@@ -5,8 +5,14 @@ namespace AdminSide.Pages
 {
     public class deleteVMModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (HttpContext.Session.GetInt32("UserId") != 1)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            return Page();
         }
     }
 }

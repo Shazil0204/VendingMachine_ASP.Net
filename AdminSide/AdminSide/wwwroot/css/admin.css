@@ -9,7 +9,7 @@
     /* This prevents the image from repeating */
     background-attachment: fixed;
     /* This will make the background image fixed during scroll */
-    overflow-x: hidden;
+    
     color: white;
 }
 

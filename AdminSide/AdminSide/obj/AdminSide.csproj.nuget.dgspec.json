@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shaz0184\\Desktop\\removing\\jordan + mine\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj": {}
+    "C:\\Users\\zbc23mwly\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\AdminSide.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shaz0184\\Desktop\\removing\\jordan + mine\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj": {
+    "C:\\Users\\zbc23mwly\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\AdminSide.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\removing\\jordan + mine\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
+        "projectUniqueName": "C:\\Users\\zbc23mwly\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\AdminSide.csproj",
         "projectName": "AdminSide",
-        "projectPath": "C:\\Users\\Shaz0184\\Desktop\\removing\\jordan + mine\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\AdminSide.csproj",
-        "packagesPath": "C:\\Users\\Shaz0184\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shaz0184\\Desktop\\removing\\jordan + mine\\Vending-Machine-Frontend-backend\\AdminSide\\AdminSide\\obj\\",
+        "projectPath": "C:\\Users\\zbc23mwly\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\AdminSide.csproj",
+        "packagesPath": "C:\\Users\\zbc23mwly\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zbc23mwly\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Shaz0184\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zbc23mwly\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

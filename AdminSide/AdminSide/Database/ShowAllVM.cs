@@ -7,7 +7,7 @@ namespace AdminSide.Database
 {
 	public class ShowAllVM
 	{
-		public string currentVM {  get; set; }
+		public string currentVM = "københavn";
 
 		public Dictionary<string, bool> GetVendingMachineStatus()
 		{

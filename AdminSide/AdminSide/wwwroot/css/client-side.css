@@ -326,17 +326,17 @@ input[type=text], input[type=password] {
     top: 120px;
     left: 10%;
     overflow-y: auto;
-    margin: 5px;
+    padding: 10px;
 }
 
 .order-product {
     text-align: left;
-    width: 75%;
+    width: 50%;
 }
 
 .price {
     text-align: right;
-    width: 25%;
+    width: 50%;
 }
 
 .item p {
@@ -344,4 +344,18 @@ input[type=text], input[type=password] {
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 18px;
+}
+
+
+button.remove-item {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "Poppins";
+    background-color: #333;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border-radius: 5px;
+    border-color: #000000;
+  
 }

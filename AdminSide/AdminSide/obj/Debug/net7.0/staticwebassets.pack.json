@@ -141,8 +141,28 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\zbcyomi\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\wwwroot\\js\\calculateTotalPrice.js",
+      "PackagePath": "staticwebassets\\js\\calculateTotalPrice.js"
+    },
+    {
+      "Id": "C:\\Users\\zbcyomi\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\wwwroot\\js\\productList.js",
+      "PackagePath": "staticwebassets\\js\\productList.js"
+    },
+    {
+      "Id": "C:\\Users\\zbcyomi\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\wwwroot\\js\\remove-btn.js",
+      "PackagePath": "staticwebassets\\js\\remove-btn.js"
+    },
+    {
       "Id": "C:\\Users\\zbcyomi\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\zbcyomi\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\wwwroot\\js\\totalprice.js",
+      "PackagePath": "staticwebassets\\js\\totalprice.js"
+    },
+    {
+      "Id": "C:\\Users\\zbcyomi\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\wwwroot\\js\\update-display.js",
+      "PackagePath": "staticwebassets\\js\\update-display.js"
     },
     {
       "Id": "C:\\Users\\zbcyomi\\Documents\\GitHub\\VendingMachine_ASP.Net\\AdminSide\\AdminSide\\wwwroot\\lib\\bootstrap\\LICENSE",

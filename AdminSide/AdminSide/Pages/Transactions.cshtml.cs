@@ -9,7 +9,7 @@ namespace AdminSide.Pages
         {
             if (HttpContext.Session.GetInt32("UserId") != 1)
             {
-                return RedirectToPage("/Index");
+                return RedirectToPage("/");
             }
 
             return Page();

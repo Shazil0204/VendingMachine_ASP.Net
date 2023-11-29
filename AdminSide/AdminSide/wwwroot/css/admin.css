@@ -27,14 +27,14 @@ body {
     max-width: 100%;
     box-sizing: border-box;
 }
-
+/* 
 .navbar {
     padding: 1rem;
     color: white;
     margin-bottom: 1rem;
     border-radius: 0px 0px 10px 10px;
     background-image: linear-gradient(to right, #F2994A, #56CCF2);
-}
+} */
 
 .black-border {
     border-radius: 10px;
@@ -68,7 +68,6 @@ body {
 @media screen and (max-width: 991px) {
     .flex-fill {
         margin: 1rem 0;
-        /* Vertical margins only, removes horizontal margins */
     }
 }
 
@@ -127,7 +126,7 @@ h3 {
 
 /*TOOLTIP*/
 
-.tooltip {
+/* .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
@@ -141,7 +140,6 @@ h3 {
         text-align: center;
         border-radius: 6px;
         padding: 5px 0;
-        /* Position the tooltip */
         position: absolute;
         z-index: 1;
     }
@@ -153,4 +151,4 @@ h3 {
 .home {
     width: 50px;
     height: auto;
-}
+} */

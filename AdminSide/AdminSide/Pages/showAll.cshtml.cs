@@ -44,35 +44,35 @@ namespace AdminSide.Pages
 			return VM.GetVendingMachineStatus();
 		}
 
-		public IActionResult OnGet()
+		public void OnGet()
         {
-			var vendingMachines = VMs();
+			// var vendingMachines = VMs();
 
-			foreach (var vm in vendingMachines)
-			{
-				string backgroundColor;
-				string statusText;
+			// foreach (var vm in vendingMachines)
+			// {
+			// 	string backgroundColor;
+			// 	string statusText;
 
-				if (vm.Value) // If VM is online
-				{
-					backgroundColor = "green";
-					statusText = "ONLINE";
-				}
-				else // If VM is offline
-				{
-					backgroundColor = "red";
-					statusText = "OFFLINE";
-				}
+			// 	if (vm.Value) // If VM is online
+			// 	{
+			// 		backgroundColor = "green";
+			// 		statusText = "ONLINE";
+			// 	}
+			// 	else // If VM is offline
+			// 	{
+			// 		backgroundColor = "red";
+			// 		statusText = "OFFLINE";
+			// 	}
 
-				DisplayInfo.Add(vm.Key, $"Background Color: {backgroundColor}, Status: {statusText}");
-			}
+			// 	DisplayInfo.Add(vm.Key, $"Background Color: {backgroundColor}, Status: {statusText}");
+			// }
 
-            if (HttpContext.Session.GetInt32("UserId") != 1)
-            {
-                return RedirectToPage("/Index");
-            }
+            // if (HttpContext.Session.GetInt32("UserId") != 1)
+            // {
+            //     return RedirectToPage("/Index");
+            // }
 
-            return Page();
+            // return Page();
         }
 
 		// public void OnGet()

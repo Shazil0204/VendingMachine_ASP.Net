@@ -3,12 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AdminSide.Pages
 {
-    public class AdminModel : PageModel
+    public class signoutModel : PageModel
     {
-        // public void OnGet()
-        // {
-        // }
-
         public IActionResult OnGet()
         {
             if (HttpContext.Session.GetInt32("UserId") != 1)
@@ -19,11 +15,13 @@ namespace AdminSide.Pages
             return Page();
         }
 
-        // public IActionResult OnGetSignOut()
-        // {
-        //     HttpContext.Session.Remove("UserId");
-             
-        //     return RedirectToPage("/");
-        // }
+        public IActionResult OnGetSignOut()
+        {
+            HttpContext.Session.Remove("UserId");
+            // Alternatively, you could clear the entire session:
+            // HttpContext.Session.Clear();
+
+            return RedirectToPage("/Index");
+        }
     }
 }

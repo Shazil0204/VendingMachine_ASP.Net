@@ -18,6 +18,7 @@ function updateTotalPrice() {
     $(".selection-showcase section p").text("Total Price: " + totalPrice);
 }
 
+
 $(document).ready(function () {
     var selectedItems = {}; // Object to store selected items and their quantities
 
@@ -63,26 +64,27 @@ $(document).ready(function () {
     function updateDisplay() {
         // Clear previous content
         $(".selection-showcase .item").empty();
-
+    
         // Display selected items in selection-showcase
         for (var product in selectedItems) {
             if (selectedItems.hasOwnProperty(product)) {
                 var quantity = selectedItems[product].quantity;
-
+    
                 var productLine = $("<p>").addClass("order-product").text(quantity + "x " + (product || "undefined"));
-
+    
                 // Create remove button
                 var removeButton = $("<button>").addClass("remove-item").text("Remove").data("product", product);
-
+    
                 // Append elements to the container
                 $(".selection-showcase .item").append(productLine, removeButton);
             }
         }
-
+    
         // Display total price in display
         var totalPrice = calculateTotalPrice();
         $(".display p").text("Total Price: " + totalPrice + " Kr");
     }
+    
 
     function calculateTotalPrice() {
         var totalPrice = 0;
@@ -98,41 +100,47 @@ $(document).ready(function () {
 
         return totalPrice;
     }
+});
 
-    var modal = document.getElementById('loginModal');
-    var btn = document.getElementById('loginBtn');
-    var body = document.getElementsByTagName('body');
 
-    document.addEventListener('DOMContentLoaded', function () {
+var modal = document.getElementById('loginModal');
+
+var btn = document.getElementById('loginBtn');
+
+var body = document.getElementsByTagName('body');
+
+    document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
     });
 
-    btn.onclick = function () {
+    btn.onclick = function() {
         modal.style.display = 'block';
-    };
+    }
 
     function closeModal() {
         modal.style.display = 'none';
     }
 
-    window.onclick = function (event) {
+    window.onclick = function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
             body.style.overflow = 'hidden';
+
         }
-    };
-
-    // Event listener for the "Clear" button
-    $(".clear-item-btn").on("click", function () {
-        // Clear the selectedItems object
-        selectedItems = {};
-
-        // Remove all selected items from the DOM
-        $(".selection-showcase .item").each(function () {
-            $(this).empty(); // or $(this).remove() to remove the entire item container
+    }
+    $(document).ready(function () {
+        // Event listener for the "Clear" button
+        $(".clear-item-btn").on("click", function () {
+            // Remove all selected items from the DOM
+            $(".selection-showcase .item").each(function() {
+                $(this).empty(); // or $(this).remove() to remove the entire item container
+            });
+    
+            // Clear the selectedItems object
+            selectedItems = {};
+    
+            // Update the display
+            updateDisplay();
         });
-
-        // Update the display
-        updateDisplay();
     });
-});
+    

@@ -8,6 +8,7 @@
 
 		internal List<Product> GetProducts()
 		{
+	
 			return new List<Product>
 			{
 				new Product()
@@ -133,9 +134,9 @@
 				},
 				new Product()
 				{
-					Name = "lol",
-					Price = 20,
-					ImageLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/G_Fuel_logo.svg/683px-G_Fuel_logo.svg.png?20190907060857",
+					Name = "Coca Cola",
+					Price = 25,
+					ImageLink = "https://www.svgrepo.com/show/303641/coca-cola-logo-logo.svg",
 				},
 
 

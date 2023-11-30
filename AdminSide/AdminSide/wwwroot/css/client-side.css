@@ -377,7 +377,7 @@ button.remove-item {
     font-size: 14px;
     font-weight: 300;
     font-family: "Poppins";
-    background-color: #333;
+    background-color: #ff2222;
     border-radius: 8px;
     transition: all 0.3s;
     border-radius: 5px;
@@ -406,7 +406,6 @@ button.remove-item:hover {
     text-align: center;
 }
 
-.clear-item-btn,
 .purchase-item-btn {
     color: white;
     font-size: 14px;
@@ -414,7 +413,7 @@ button.remove-item:hover {
     font-family: "Poppins";
     border-radius: 8px;
     transition: all 0.3s;
-    width: 45%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     height: 70%;
     padding: 10px;
 }
@@ -434,9 +433,3 @@ button.remove-item:hover {
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
-.clear-item-btn:hover {
-    color: #2d3748;
-    background-color: #edf2f7;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
-}

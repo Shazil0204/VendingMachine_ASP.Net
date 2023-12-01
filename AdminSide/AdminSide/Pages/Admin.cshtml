@@ -1,182 +1,169 @@
 ﻿@page
 @model AdminSide.Pages.AdminModel
 @{
+    string cityName = AdminSide.Model.AllProperties.CityName;
 
-    AdminSide.Database.ShowAllVM VMS = new AdminSide.Database.ShowAllVM(); 
+    AdminSide.Model.AllProperties am = new AdminSide.Model.AllProperties();
 
-    string VMName = VMS.currentVM;
-    int i = 2;
+
+    bool statuscolor = am.VMstatus();
 }
 
-@if(i == 2)
-{
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-        <title>Welcome Admin!</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link href="/css/admin.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>Welcome Admin!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/admin.css" rel="stylesheet">
+</head>
 
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="d-flex flex-lg-row flex-column">
-                    <div class="black-border flex-fill">
-                        <!-- This is to show options -->
-                        <div class="create-vm black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to create vending_machine -->
-                            <a asp-page="/createVM">
-                                <button>
-                                    <img src="/Images/1.png" alt="create vending machine">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="insert_city black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to Creata a Product -->
-                            <a asp-page="/updateProduct">
-                                <button>
-                                    <img src="/images/12.png" alt="Creata a Product">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="delete_vm black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to update Product -->
-                            <a asp-page="/updateProduct">
-                                <button>
-                                    <img src="/Images/2.png" alt="update Product">
-                                </button>
-                            </a>
-                        </div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="d-flex flex-lg-row flex-column">
+                <div class="black-border flex-fill">
+                    <!-- This is to show options -->
+                    <div class="create-vm black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to create vending_machine -->
+                        <a asp-page="/createVM">
+                            <button>
+                                <img src="/Images/1.png" alt="create vending machine">
+                            </button>
+                        </a>
                     </div>
-                    <div class="black-border flex-fill">
-                        <!-- This is to show options -->
-                        <div class="update_vm black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to create a city-->
-                            <a asp-page="/createCity">
-                                <button>
-                                    <img src="/Images/4.png" alt="Create a city">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="show_vms black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to Update a city-->
-                            <a asp-page="/updateCity">
-                                <button>
-                                    <img src="/Images/5.png" alt="Update a city">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="remove_city black-border-inside flex-fill sidebar">
-                            <!-- will use this to Remove a city-->
-                            <a asp-page="/deleteCity">
-                                <button>
-                                    <img src="/Images/6.png" alt="Remove a city">
-                                </button>
-                            </a>
-                        </div>
+                    <div class="insert_city black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to Creata a Product -->
+                        <a asp-page="/updateProduct">
+                            <button>
+                                <img src="/images/12.png" alt="Creata a Product">
+                            </button>
+                        </a>
                     </div>
-                    <div class="black-border flex-fill">
-                        <!-- This is to show the vending machine -->
-                        <div class="black-border-inside flex-fill">
-                            <!-- will use this to show vending_machine -->
-                            <a asp-page="/index">
-                                <button id="vending_machine">
-                                    <img id="vending_machine-main-img" src="/Images/7.png"
-                                         alt="vending machine">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="status black-border-inside flex-fill d-flex">
-                            <!-- will use this to show status of vending_machine -->
-                            <h3> @VMName </h3>
-                        </div>
-                        <div class="update_city black-border-inside flex-fill">
-                            <!-- will use this to Show All vending machine -->
-                            <a asp-page="/showAll">
-                                <button>
-                                    <img src="/Images/9.png" alt="Show All vending machine">
-                                </button>
-                            </a>
-                        </div>
+                    <div class="delete_vm black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to update Product -->
+                        <a asp-page="/updateProduct">
+                            <button>
+                                <img src="/Images/2.png" alt="update Product">
+                            </button>
+                        </a>
                     </div>
-                    <div class="black-border flex-fill">
-                        <!-- This is to show options -->
-                        <div class="update_vm black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to Create Brand -->
-                            <a asp-page="/Create_Brand">
-                                <button>
-                                    <img src="/Images/10.png" alt="Create Brand">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="show_vms black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to Create Product type -->
-                            <a asp-page="/Product_Type">
-                                <button>
-                                    <img src="/Images/11.png" alt="Create Product type">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="remove_city black-border-inside flex-fill sidebar">
-                            <!-- will use this to Remove Vending Machine -->
-                            <a asp-page="/deleteVM">
-                                <button>
-                                    <img src="/Images/3.png" alt="Remove Vending Machine">
-                                </button>
-                            </a>
-                        </div>
+                </div>
+                <div class="black-border flex-fill">
+                    <!-- This is to show options -->
+                    <div class="update_vm black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to create a city-->
+                        <a asp-page="/createCity">
+                            <button>
+                                <img src="/Images/4.png" alt="Create a city">
+                            </button>
+                        </a>
                     </div>
-                    <div class="black-border flex-fill">
-                        <!-- This is to show options -->
-                        <div class="update_vm black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to update Brand-->
-                            <a asp-page="/updateBrand">
-                                <button>
-                                    <img src="/Images/13.png" alt="update Brand">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="show_vms black-border-inside flex-fill" id="sidebar">
-                            <!-- will use this to update Product type-->
-                            <a asp-page="/updateProduct_Type">
-                                <button>
-                                    <img src="/Images/14.png" alt="update Product type">
-                                </button>
-                            </a>
-                        </div>
-                        <div class="remove_city black-border-inside flex-fill sidebar">
-                            <!-- will use this to Sign out-->
-                            <a asp-page="/signout">
-                                <button>
-                                    <img src="/Images/15.png" alt="Sign out">
-                                </button>
-                            </a>
-                        </div>
+                    <div class="show_vms black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to Update a city-->
+                        <a asp-page="/updateCity">
+                            <button>
+                                <img src="/Images/5.png" alt="Update a city">
+                            </button>
+                        </a>
+                    </div>
+                    <div class="remove_city black-border-inside flex-fill sidebar">
+                        <!-- will use this to Remove a city-->
+                        <a asp-page="/deleteCity">
+                            <button>
+                                <img src="/Images/6.png" alt="Remove a city">
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="black-border flex-fill">
+                    <!-- This is to show the vending machine -->
+                    <div class="black-border-inside flex-fill">
+                        <!-- will use this to show vending_machine -->
+                        <a asp-page="/index">
+                            <button id="vending_machine">
+                                <img id="vending_machine-main-img" src="/Images/7.png" alt="vending machine">
+                            </button>
+                        </a>
+                    </div>
+                    <div class="status black-border-inside flex-fill d-flex">
+                        <!-- will use this to show status of vending_machine -->
+                        <form method="post" asp-page-handler="UpdateCurrentVMStatus">
+                            <button type="submit" style="height: 50px; background-color: @(statuscolor ? "green" : "red");">
+                                <h3 style="color: White;"> @cityName </h3>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="update_city black-border-inside flex-fill">
+                        <!-- will use this to Show All vending machine -->
+                        <a asp-page="/showAll">
+                            <button>
+                                <img src="/Images/9.png" alt="Show All vending machine">
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="black-border flex-fill">
+                    <!-- This is to show options -->
+                    <div class="update_vm black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to Create Brand -->
+                        <a asp-page="/Create_Brand">
+                            <button>
+                                <img src="/Images/10.png" alt="Create Brand">
+                            </button>
+                        </a>
+                    </div>
+                    <div class="show_vms black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to Create Product type -->
+                        <a asp-page="/Product_Type">
+                            <button>
+                                <img src="/Images/11.png" alt="Create Product type">
+                            </button>
+                        </a>
+                    </div>
+                    <div class="remove_city black-border-inside flex-fill sidebar">
+                        <!-- will use this to Remove Vending Machine -->
+                        <a asp-page="/deleteVM">
+                            <button>
+                                <img src="/Images/3.png" alt="Remove Vending Machine">
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="black-border flex-fill">
+                    <!-- This is to show options -->
+                    <div class="update_vm black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to update Brand-->
+                        <a asp-page="/updateBrand">
+                            <button>
+                                <img src="/Images/13.png" alt="update Brand">
+                            </button>
+                        </a>
+                    </div>
+                    <div class="show_vms black-border-inside flex-fill" id="sidebar">
+                        <!-- will use this to update Product type-->
+                        <a asp-page="/updateProduct_Type">
+                            <button>
+                                <img src="/Images/14.png" alt="update Product type">
+                            </button>
+                        </a>
+                    </div>
+                    <div class="remove_city black-border-inside flex-fill sidebar">
+                        <!-- will use this to Sign out-->
+                        <a asp-page="/signout">
+                            <button>
+                                <img src="/Images/15.png" alt="Sign out">
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-    </html>
-}
-else
-{
-    <body style="background-image: url(https://a.thumbs.redditmedia.com/ZCOugTWF3PsViiZ4kFcgnzsvgsb50jd8HfSCH_FgjB0.png);">
- 
-        <div style="text-align: center;">
- 
-            <img src="https://a.thumbs.redditmedia.com/ZCOugTWF3PsViiZ4kFcgnzsvgsb50jd8HfSCH_FgjB0.png" style="height:80vh;">
+    </div>
+</body>
 
-            <h1 style="margin-top:3vh; color:white; background-color: rgba(0, 0, 0, 0.5);"> you can't access this! </h1>
-
-        </div>
-
-    </body>
-
-}
+</html>

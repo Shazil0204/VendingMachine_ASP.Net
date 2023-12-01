@@ -25,5 +25,11 @@ namespace AdminSide.Pages
              
         //     return RedirectToPage("/");
         // }
+
+        public IActionResult OnPostUpdateCurrentVMStatus()
+		{
+
+			return RedirectToPage();
+		}
     }
 }

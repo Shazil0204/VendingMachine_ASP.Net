@@ -2,9 +2,9 @@ using System.Data.SqlClient;
 
 namespace AdminSide.Database
 {
-    public class Login
+    public class UpdateVendingMachineStatus
     {
-        internal int ValidateUser(int employeeNumber, string username, string password)
+        internal int VMStatus(int NewStatus, string VMName)
         {
             var config = new ConfigurationBuilder()
                    .AddJsonFile("appsettings.json")
@@ -14,12 +14,11 @@ namespace AdminSide.Database
 
             using (var connection = new SqlConnection(conn))
             {
-                using (var command = new SqlCommand("[dbo].[CHECKINGPERMISSION]", connection))
+                using (var command = new SqlCommand("[dbo].[UPDATEDBSTATUS]", connection))
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@EmployeeNumber", employeeNumber);
-                    command.Parameters.AddWithValue("@UserName", username);
-                    command.Parameters.AddWithValue("@Password", password);
+                    command.Parameters.AddWithValue("@VMName", VMName);
+                    command.Parameters.AddWithValue("@NewStatus", NewStatus);
 
                     connection.Open();
                     var result = (int)command.ExecuteScalar();

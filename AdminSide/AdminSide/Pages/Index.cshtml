@@ -5,8 +5,8 @@
 @{
     ViewData["Title"] = "Kroells Vending";
     decimal balance = 500.00m;
-    AdminSide.Database.Product productData = new AdminSide.Database.Product();
-    List<AdminSide.Database.Product> products = productData.GetProducts();
+    Database.Product p = new Database.Product();
+    p.GetProducts();
 }
 
 @*Long live christmas pepe!*@
@@ -59,7 +59,7 @@
 
     <div class="vending-machine-wrapper">
         <div class="vending-machine-container">
-            @foreach (AdminSide.Database.Product product in products)
+            @foreach (AdminSide.Database.Product product in p.products)
             {
                 decimal price = product.Price;
                 string img = product.ImageLink;

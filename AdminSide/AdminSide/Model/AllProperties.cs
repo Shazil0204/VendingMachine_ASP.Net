@@ -6,13 +6,19 @@ namespace AdminSide.Model
     public class AllProperties
     {
         public static string CityName = "København";
-        AdminSide.Database.VMStatus status = new AdminSide.Database.VMStatus();
+        Database.VMStatus Ustatus = new Database.VMStatus();
+        Database.UpdateVendingMachineStatus Rstatus = new Database.UpdateVendingMachineStatus();
 
         internal bool VMstatus()
         {
-            bool VMS = status.Status(CityName);
+            bool VMS = Ustatus.ReadingVMStatus(CityName);
 
             return VMS; 
+        }
+
+        internal void ChangeStatus()
+        {
+            Rstatus.UpdateVMStatus(CityName);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace AdminSide.Database
 {
     public class VMStatus
     {
-        internal bool Status(string VMName)
+        internal bool ReadingVMStatus(string VMName)
         {
             bool dbStatus = true;
 

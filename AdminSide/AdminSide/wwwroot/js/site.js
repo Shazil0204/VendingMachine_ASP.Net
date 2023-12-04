@@ -1,19 +1,10 @@
-﻿    // Function to calculate and update the total price
-    function updateTotalPrice() {
-        var totalPrice = 0;
+﻿
+// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+// for details on configuring this project to bundle and minify static web assets.
 
-        // Iterate through each selected item
-        $(".selection-showcase .item .price").each(function () {
-            var priceText = $(this).text().replace("Price: ", "").trim();
-            var price = parseFloat(priceText) || 0; // Convert the price to a number, default to 0 if not a valid number
-            totalPrice += price;
-        });
+// Write your JavaScript code.
 
-        // Display the total price inside the specific <p> element
-        $(".selection-showcase section p").text("Total Price: " + totalPrice);
-    }
-
-  // Function to calculate and update the total price
+// Function to calculate and update the total price
 function updateTotalPrice() {
     var totalPrice = 0;
 
@@ -25,8 +16,31 @@ function updateTotalPrice() {
     });
 
     // Display the total price inside the specific <p> element
-    $(".display .total").text("Total Price: " + totalPrice + " Kr");
+    $(".selection-showcase section p").text("Total Price: " + totalPrice);
 }
+
+$(document).ready(function () {
+    var selectedItems = {}; // Object to store selected items and their quantities
+
+    $(".buy-item").click(function () {
+        var selectedProduct = $(this).data("product");
+        var selectedPrice = $(this).data("price");
+
+        // Check if the item is already selected
+        if (selectedItems[selectedProduct]) {
+            // If yes, increment the quantity
+            selectedItems[selectedProduct].quantity++;
+        } else {
+            // If no, add a new entry
+            selectedItems[selectedProduct] = {
+                quantity: 1,
+                price: selectedPrice
+            };
+        }
+
+        // Update the display
+        updateDisplay();
+    });
 
     // Event delegation for remove buttons
     $(".selection-showcase").on("click", ".remove-item", function () {
@@ -50,26 +64,65 @@ function updateTotalPrice() {
     function updateDisplay() {
         // Clear previous content
         $(".selection-showcase .item").empty();
-    
+
         // Display selected items in selection-showcase
         for (var product in selectedItems) {
             if (selectedItems.hasOwnProperty(product)) {
                 var quantity = selectedItems[product].quantity;
-    
+
                 var productLine = $("<p>").addClass("order-product").text(quantity + "x " + (product || "undefined"));
-    
+
                 // Create remove button
                 var removeButton = $("<button>").addClass("remove-item").text("Remove").data("product", product);
-    
+
                 // Append elements to the container
                 $(".selection-showcase .item").append(productLine, removeButton);
             }
         }
-    
+
         // Display total price in display
         var totalPrice = calculateTotalPrice();
         $(".display p").text("Total Price: " + totalPrice + " Kr");
     }
+
+    function calculateTotalPrice() {
+        var totalPrice = 0;
+
+        for (var product in selectedItems) {
+            if (selectedItems.hasOwnProperty(product)) {
+                var quantity = selectedItems[product].quantity;
+                var price = selectedItems[product].price;
+
+                totalPrice += quantity * price;
+            }
+        }
+
+        return totalPrice;
+    }
+
+    var modal = document.getElementById('loginModal');
+    var btn = document.getElementById('loginBtn');
+    var body = document.getElementsByTagName('body');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        modal.style.display = 'none';
+    });
+
+
+    // Event listener for the "Clear" button
+    $(".clear-item-btn").on("click", function () {
+        // Clear the selectedItems object
+        selectedItems = {};
+
+        // Remove all selected items from the DOM
+        $(".selection-showcase .item").each(function () {
+            $(this).empty(); // or $(this).remove() to remove the entire item container
+        });
+
+        // Update the display
+        updateDisplay();
+    });
+});
 
 
         var modal = document.getElementById('loginModal');
@@ -104,20 +157,4 @@ function updateTotalPrice() {
                 body.style.overflow = 'hidden';
     
             }
-        }
-        $(document).ready(function () {
-            // Event listener for the "Clear" button
-            $(".clear-item-btn").on("click", function () {
-                // Remove all selected items from the DOM
-                $(".selection-showcase .item").each(function() {
-                    $(this).empty(); // or $(this).remove() to remove the entire item container
-                });
-        
-                // Clear the selectedItems object
-                selectedItems = {};
-        
-                // Update the display
-                updateDisplay();
-            });
-        
-    });
+        };

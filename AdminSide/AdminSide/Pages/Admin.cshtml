@@ -15,7 +15,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <title>Welcome Admin!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -38,7 +37,7 @@
                     </div>
                     <div class="insert_city black-border-inside flex-fill" id="sidebar">
                         <!-- will use this to Creata a Product -->
-                        <a asp-page="/updateProduct">
+                        <a asp-page="/CreateProduct">
                             <button>
                                 <img src="/images/12.png" alt="Creata a Product">
                             </button>
@@ -92,7 +91,7 @@
                     </div>
                     <div class="status black-border-inside flex-fill d-flex">
                         <!-- will use this to show status of vending_machine -->
-                        <form method="post" asp-page-handler="UpdateCurrentVMStatus">
+                        <form method="post" asp-page-handler="UpdateCurrentVMStatus" style="width: 100%;">
                             <button type="submit" style="height: 50px; background-color: @(statuscolor ? "green" : "red");">
                                 <h3 style="color: White;"> @cityName </h3>
                             </button>

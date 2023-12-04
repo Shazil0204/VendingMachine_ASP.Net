@@ -4,13 +4,13 @@ namespace AdminSide.Database
 {
     public class UpdateVendingMachineStatus
     {
-        internal int VMStatus(int NewStatus, string VMName)
+        internal void UpdateVMStatus(string VMName)
         {
             var config = new ConfigurationBuilder()
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var conn = config.GetConnectionString("AdminLoginDB");
+            var conn = config.GetConnectionString("AllVendingMachinesDB");
 
             using (var connection = new SqlConnection(conn))
             {
@@ -18,12 +18,9 @@ namespace AdminSide.Database
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@VMName", VMName);
-                    command.Parameters.AddWithValue("@NewStatus", NewStatus);
 
                     connection.Open();
-                    var result = (int)command.ExecuteScalar();
-
-                    return result;
+                    command.ExecuteScalar();
                 }
             }
         }

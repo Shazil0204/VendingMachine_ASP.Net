@@ -5,6 +5,9 @@ namespace AdminSide.Pages
 {
     public class AdminModel : PageModel
     {
+
+        Model.AllProperties allProperties = new Model.AllProperties();
+
         // public void OnGet()
         // {
         // }
@@ -19,16 +22,9 @@ namespace AdminSide.Pages
             return Page();
         }
 
-        // public IActionResult OnGetSignOut()
-        // {
-        //     HttpContext.Session.Remove("UserId");
-             
-        //     return RedirectToPage("/");
-        // }
-
         public IActionResult OnPostUpdateCurrentVMStatus()
 		{
-
+            allProperties.ChangeStatus();
 			return RedirectToPage();
 		}
     }

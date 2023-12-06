@@ -20,27 +20,22 @@
     <div class="center-wrapper">
         <div class="Create-container">
             <div class="Create-box">
-                <h2>Insert a new Product type</h2>
-                <p class="Info">Enter the new product type that you want to to exist</p>
+                <h2>Insert a new Product Type</h2>
+                <p class="Info">Enter the Product Type that you want to enter</p>
 
-                <input type="text" placeholder="product type" required>
+                <form method="post" asp-page-handler="CreateProductType" class="visible">
 
-                <div class="d-flex">
+                    <input type="text" style="text-align:center;" name="TypeName" placeholder="Product Type" required/>
 
-                    <a asp-page="/Admin" style="width:50%;">
+                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Done</button>
+                </form>
+                <button onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
 
-                        <button type="submit" style="margin-top: 1vh; height: 5vh;">Back</button>
-
-                    </a>
-
-                    <div style="margin: 5px;"></div>
-
-                    <a style="width:50%;">
-
-                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Next</button>
-                    </a>
-
-                </div>
+                <script>
+                    function goBack() {
+                        window.history.back(); // Or you can redirect to a specific URL
+                    }
+                </script>
             </div>
         </div>
     </div>

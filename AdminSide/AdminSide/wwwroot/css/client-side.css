@@ -335,7 +335,6 @@ input[type=text], input[type=password] {
     top: 50px;
     left: 10%;
     right: 50%;
-    text-align: center;
 }
 
 .selection-showcase {
@@ -419,7 +418,9 @@ button.remove-item:hover {
 }
 
 .purchase-item-btn {
-    background-color: rgb(47, 246, 47);
+    background-color:blueviolet;    
+    height:50px;
+    
 }
 
 .clear-item-btn {
@@ -432,4 +433,22 @@ button.remove-item:hover {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
 }
+.display-item {
+    display: flex;
+    justify-content: space-between;
+}
 
+.bal {
+    text-align: right;
+    margin-left:10px;
+    margin-top:10px;
+    margin-right: 10px; /* Adjust margin as needed for space */
+}
+
+.total {
+    text-align: left;
+    width: 40%; /* Adjust width as needed */
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-right: 10px; /* Adjust margin as needed for space */
+}

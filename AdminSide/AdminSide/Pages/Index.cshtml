@@ -25,37 +25,54 @@
 </head>
 
 <body>
-    <div class="navbarI">
-        <div class="company-name">
-            <img src="https://cdn3.emoji.gg/emojis/3194-steamhappy.png"></img>
-            <div class="company-text">Kroell's vending machines</div>
+    @if (HttpContext.Session.GetInt32("UserId") != 1)
+    {
+        <div class="navbarI">
+            <div class="company-name">
+                <img src="https://cdn3.emoji.gg/emojis/3194-steamhappy.png"></img>
+                <div class="company-text">Kroell's vending machines</div>
+            </div>
+            <button id="loginBtn" class="admin-button" role="button">Admin Panel</button>
+            <a asp-page="/showAll"><button class="locations-button" role="modal">Locations</button></a>
         </div>
-        <button id="loginBtn" class="admin-button" role="button">Admin Panel</button>
-        <a asp-page="/showAll"><button class="locations-button" role="modal">Locations</button></a>
-    </div>
 
-    <div id="loginModal" class="modalI">
-        <div class="modal-contentI">
-            <span class="close-modalI" onclick="closeModal()">&times;</span>
-            <h2>Login</h2>
-            <form method="post">
-                <label for="Employee_Number"><b>Employee Number</b></label>
-                <input type="text" placeholder="Enter your employee number" name="EmployeeNumber" required>
+        <div id="loginModal" class="modalI">
+            <div class="modal-contentI">
+                <span class="close-modalI" onclick="closeModal()">&times;</span>
+                <h2>Login</h2>
 
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter your username" name="username" required>
+                <form method="post">
+                    <label for="EmployeeNumber"><b>Employee Number</b></label>
+                    <input type="text" placeholder="Enter your employee number" name="EmployeeNumber" required />
 
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter your password" name="password" required>
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" placeholder="Enter your username" name="username" required />
 
-                <div class="remember">
-                    <input type="checkbox" name="remember"> Remember me </input>
-                </div>
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter your password" name="password" required />
 
-                <button type="submit">Login</button>
-            </form>
+                    <div class="remember">
+                        <input type="checkbox" name="remember" /> Remember me
+                    </div>
+
+                    <button type="submit">Login</button>
+                </form>
+            </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="navbarI">
+            <div class="company-name">
+                <img src="https://cdn3.emoji.gg/emojis/3194-steamhappy.png"></img>
+                <div class="company-text">Kroell's vending machines</div>
+            </div>
+            <a asp-page="/Admin">
+                <button id="loginBtn" class="admin-button" role="button">Admin Panel</button>
+            </a>
+            <a asp-page="/showAll"><button class="locations-button" role="modal">Locations</button></a>
+        </div>
+    }
 
     <div class="vending-machine-wrapper">
         <div class="vending-machine-container">
@@ -73,7 +90,12 @@
         </div>
     <div class="selection-container">
     <div class="display">
-    <p class="bal">Balance: @balance Kr </p><p class="total"></p>
+        <article class="display-item">
+
+    <p class="bal">Balance: @balance Kr </p>
+    <p class="total"></p>
+
+        </article>
     </div>
         <div class="selection-showcase">
             <section>

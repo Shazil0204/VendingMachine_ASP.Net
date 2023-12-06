@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace AdminSide.Database
 {
-    public class CreateProduct
+    public class CreateVendingMachine
     {
-        internal int CreatingProduct(string VMName, string productName, string URL, int price, int stock, int brandID, int typeID)
+        internal int CreateVM(string name)
         {
             var config = new ConfigurationBuilder()
                    .AddJsonFile("appsettings.json")
@@ -16,16 +16,10 @@ namespace AdminSide.Database
 
             using (var connection = new SqlConnection(conn))
             {
-                using (var cmd = new SqlCommand("[dbo].[CREATEPRODUCT]", connection))
+                using (var cmd = new SqlCommand("[dbo].[CREATINGVM]", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@VMName", VMName));
-                    cmd.Parameters.Add(new SqlParameter("@ProductName", productName));
-                    cmd.Parameters.Add(new SqlParameter("@ProductURL", URL));
-                    cmd.Parameters.Add(new SqlParameter("@Stock", stock));
-                    cmd.Parameters.Add(new SqlParameter("@Price", price));
-                    cmd.Parameters.Add(new SqlParameter("@BrandID", brandID));
-                    cmd.Parameters.Add(new SqlParameter("@TypeID", typeID));
+                    cmd.Parameters.Add(new SqlParameter("@VMName", name));
 
                     try
                     {
@@ -40,7 +34,7 @@ namespace AdminSide.Database
                         return -1; // Indicate error
                     }
                 }
-            }
+            }   
         }
     }
 }

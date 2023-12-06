@@ -23,26 +23,19 @@
                 <h2>Insert a new Brand</h2>
                 <p class="Info">Enter the Brand that you want to enter</p>
 
-                <input type="text" placeholder="Brand Name" required>
+                <form method="post" asp-page-handler="CreateBrand" class="visible">
 
-                <div class="d-flex">
+                    <input type="text" style="text-align:center;" name="BrandName" placeholder="Brand Name" required/>
 
-                    <a asp-page="/Admin" style="width:50%;">
+                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Done</button>
+                </form>
+                <button onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
 
-                        <button type="submit" style="margin-top: 1vh; height: 5vh;">Back</button>
-
-                    </a>
-
-                    <div style="margin: 5px;"></div>
-
-                    <a style="width:50%;">
-                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Next</button>
-
-
-                    </a>
-
-
-                </div>
+                <script>
+                    function goBack() {
+                        window.history.back(); // Or you can redirect to a specific URL
+                    }
+                </script>
             </div>
         </div>
     </div>

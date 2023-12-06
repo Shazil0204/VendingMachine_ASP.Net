@@ -11,7 +11,7 @@ namespace AdminSide.Pages
             {
                 return RedirectToPage("/Index");
             }
-
+            Model.AllProperties.CurrentAction = "Delete Vending Machine";
             return Page();
         }
     }

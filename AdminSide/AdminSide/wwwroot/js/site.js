@@ -76,13 +76,13 @@ $(document).ready(function () {
                 var removeButton = $("<button>").addClass("remove-item").text("Remove").data("product", product);
 
                 // Append elements to the container
-                $(".selection-showcase .item").append(productLine, removeButton);
+                $(".selection-showcase .item").append(productLine, removeButton)
             }
         }
 
         // Display total price in display
         var totalPrice = calculateTotalPrice();
-        $(".display p").text("Total Price: " + totalPrice + " Kr");
+        $(".selection-container .display .total").text("Total Price: " + totalPrice + " Kr");
     }
 
     function calculateTotalPrice() {
@@ -157,4 +157,37 @@ $(document).ready(function () {
                 body.style.overflow = 'hidden';
     
             }
-        };
+};
+
+$(".purchase-item-btn").on("click", function () {
+    // Assuming you have a balance variable defined somewhere
+    var balance = 1000; // Replace this with the actual balance variable
+
+    var totalPrice = calculateTotalPrice();
+
+    // Check if the balance is sufficient for the purchase
+    if (totalPrice <= balance) {
+        // Deduct the total price from the balance
+        balance -= totalPrice;
+
+        // Clear the selectedItems object
+        selectedItems = {};
+
+        // Remove all selected items from the DOM
+        $(".selection-showcase .item").each(function () {
+            $(this).empty(); // or $(this).remove() to remove the entire item container
+        });
+
+        // Update the display
+        updateDisplay();
+
+        // Update the balance display (replace this with the actual code to update the balance in your UI)
+        $(".balance-display").text("Balance: " + balance + " Kr");
+
+        // Display a success message or perform other actions as needed
+        alert("Purchase successful!");
+    } else {
+        // Display an error message or perform other actions as needed
+        alert("Insufficient balance. Please add funds.");
+    }
+});

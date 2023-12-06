@@ -6,6 +6,8 @@ namespace AdminSide.Model
     public class AllProperties
     {
         public static string CityName = "København";
+        public static string CurrentAction = "Null";
+        public static int ResultValue = -50;
         Database.VMStatus Ustatus = new Database.VMStatus();
         Database.UpdateVendingMachineStatus Rstatus = new Database.UpdateVendingMachineStatus();
 
@@ -15,7 +17,6 @@ namespace AdminSide.Model
 
             return VMS; 
         }
-
         internal void ChangeStatus()
         {
             Rstatus.UpdateVMStatus(CityName);

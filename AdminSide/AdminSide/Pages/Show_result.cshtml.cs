@@ -1,9 +1,10 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AdminSide.Pages
 {
-    public class deleteCityModel : PageModel
+    public class Show_resultModel : PageModel
     {
         public IActionResult OnGet()
         {
@@ -11,8 +12,13 @@ namespace AdminSide.Pages
             {
                 return RedirectToPage("/Index");
             }
-            Model.AllProperties.CurrentAction = "Delete City";
+
             return Page();
+        }
+        internal int ReturnValue { get; set; }
+
+        internal void TakeData(int value){
+            ReturnValue = value;
         }
     }
 }

@@ -12,12 +12,11 @@ namespace AdminSide.Pages
             {
                 return RedirectToPage("/Index");
             }
-
+            Model.AllProperties.CurrentAction = "Create Product";
             return Page();
         }
-
-        [BindProperty]
-        public string CityName { get; set; }
+        Database.CreateProduct CP = new Database.CreateProduct();
+        Show_resultModel SAM = new Show_resultModel();
 
         [BindProperty]
         public string ProductName { get; set; }
@@ -39,8 +38,8 @@ namespace AdminSide.Pages
 
         public IActionResult OnPostCreateProduct()
         {
-            Debug.WriteLine(AdminSide.Model.AllProperties.CityName + "\n" + ProductName+ "\n" + URL + "\n" + Price + "\n" + Stock + "\n" + BrandID + "\n" + TypeID);
-            return RedirectToPage("/Admin");
+            Model.AllProperties.ResultValue = CP.CreatingProduct(Model.AllProperties.CityName, ProductName, URL, Price, Stock, BrandID, TypeID);
+            return RedirectToPage("/Show_result");
         }
     }
 }

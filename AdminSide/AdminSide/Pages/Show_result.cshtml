@@ -1,0 +1,259 @@
+@page
+@model AdminSide.Pages.Show_resultModel
+@{
+    string name = AdminSide.Model.AllProperties.CurrentAction;
+    int result = AdminSide.Model.AllProperties.ResultValue;
+}
+
+<style>
+    .backbutton {
+        background-color: aqua;
+        opacity: 0.5;
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        justify-self: center;
+        display: flex;
+        border-radius: 10px;
+        border: 1px solid white;
+        transition: all 1s ease;
+    }
+
+    .backbutton:hover {
+        border-radius: 30px;
+        background-color: aqua;
+        opacity: 1;
+        border: 1px solid black;
+    }
+</style>
+
+@if (name == "Create Vending Machine")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == -2)
+    {
+        <h2>A Vending Machine with the same name already exists</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else if (result == -1)
+    {
+        <h2>The city name you have entered does not exists in our database</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else if (result == 0)
+    {
+        <h2>The Vending Machine has been created successfully</h2>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+}
+
+else if (name == "Create Product")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h2> Your data has been inserted into the database have a nice day </h2>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <h4>The most common reason for this error is that you might have insert the wrong <strong>BrandID</strong> or
+            <strong>TypeID</strong></h4>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Update Product")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your Product has been updated successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Create City")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your City has been created successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else if (result == -2)
+    {
+        <h2>City already exists</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Update City")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your city has been updated successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else if (result == -2)
+    {
+        <h1>City does not exists</h1>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Delete City")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your City has been deleted successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else if (result == -2)
+    {
+        <h1>City does not exists</h1>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Create Brand")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your brand has been created successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else if (result == -1)
+    {
+        <h1>BRAND ALREADY EXIST</h1>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Create Product Type")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your Product Type has been created successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else if (result == -1)
+    {
+        <h1>Product Type already exists</h1>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Delete Vending Machine")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your Vending Machine has been deleted successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else if (result == -2)
+    {
+        <h1>Vending Machine does not exists</h1>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Update Brand")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your Brand has been updated successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else if (name == "Update Product Type")
+{
+    <h2>The result from the insert data that you have just insert in @name is:</h2>
+
+    @if (result == 0)
+    {
+        <h1>Your Product Type has been updated successfully</h1>
+        <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
+    }
+    else
+    {
+        <h2>Something went wrong please try one more time</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
+}
+
+else
+{
+    <h1>I don't know where the fuck you are</h1>
+    <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+}
+
+
+<script>
+    function AdminPage() {
+        window.location.href = 'Admin'; // Replace with your admin page URL
+    }
+
+    function goBack() {
+        window.history.back(); // Or you can redirect to a specific URL
+    }
+</script>

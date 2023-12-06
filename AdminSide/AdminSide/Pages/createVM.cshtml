@@ -11,8 +11,8 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <title>Create Vending Machine</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="/css/admin.css" rel="stylesheet"> 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/createVM.css" rel="stylesheet">
 </head>
 
@@ -22,25 +22,21 @@
             <div class="Create-box">
                 <h2>Create a new Vending Machine</h2>
                 <p class="Info">Enter the city name of where the new vending machine should be located</p>
-                
-                    <input type="text" placeholder="City Name" required>
 
-                    <div class="d-flex">
+                <form method="post" asp-page-handler="CreateVendingMachine" class="visible">
 
-                        <a asp-page="/Admin" style="width:50%;">
+                    <input type="text" style="text-align:center;" name="CityName" placeholder="City Name" required/>
 
-                            <button type="submit" style="margin-top: 1vh; height: 5vh;">Back</button>
+                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Done</button>
+                </form>
+                <button onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
 
-                        </a>
+                <script>
+                    function goBack() {
+                        window.history.back(); // Or you can redirect to a specific URL
+                    }
+                </script>
 
-                        <div style="margin: 5px;"></div>
-
-                        <a style="width:50%;">
-
-                        <button type="submit" style="margin-top: 1vh; height: 5vh;">Next</button>
-                        </a>
-
-                    </div>
             </div>
         </div>
     </div>

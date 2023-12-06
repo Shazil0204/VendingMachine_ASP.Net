@@ -18,7 +18,7 @@ namespace AdminSide.Pages
             {
                 return RedirectToPage("/Index");
             }
-
+            Model.AllProperties.CurrentAction = "Admin";
             return Page();
         }
 

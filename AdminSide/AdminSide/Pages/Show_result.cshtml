@@ -47,6 +47,11 @@
         <h2>The Vending Machine has been created successfully</h2>
         <button class="backbutton" onclick="AdminPage()">Go Back To Admin Page</button>
     }
+    else
+    {
+        <h2>Something went wrong</h2>
+        <button class="backbutton" onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
+    }
 }
 
 else if (name == "Create Product")
@@ -104,7 +109,7 @@ else if (name == "Create City")
     }
 }
 
-else if (name == "Update City")
+else if (name == "Update City Name")
 {
     <h2>The result from the insert data that you have just insert in @name is:</h2>
 

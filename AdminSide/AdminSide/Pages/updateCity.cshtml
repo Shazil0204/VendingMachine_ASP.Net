@@ -19,28 +19,24 @@
     <div class="center-wrapper">
         <div class="Create-container">
             <div class="Create-box">
-                <h2>Update City Name</h2>
-                <p class="Info">Enter the previous city name and the new city name of which you want to update</p>
+                <h2>Create a new Vending Machine</h2>
+                <p class="Info">Enter the city name of where the new vending machine should be located</p>
 
-                <input type="password" placeholder="Previous City Name" required />
-                <input type="text" placeholder="Update City Name"required />
+                <form method="post" asp-page-handler="CreateVendingMachine" class="visible">
 
-                <div class="d-flex">
+                    <input type="text" style="text-align:center;" name="oldCityName" placeholder="City Name" required/>
 
-                    <a asp-page="/Admin" style="width:50%;">
+                    <input type="text" style="text-align:center;" name="newCityName" placeholder="Update City Name" required/>
 
-                        <button type="submit" style="margin-top: 1vh; height: 5vh;">Back</button>
+                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Done</button>
+                </form>
+                <button onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
 
-                    </a>
-
-                    <div style="margin: 5px;"></div>
-
-                    <a style="width:50%;">
-
-                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Next</button>
-                    </a>
-
-                </div>
+                <script>
+                    function goBack() {
+                        window.history.back(); // Or you can redirect to a specific URL
+                    }
+                </script>
 
             </div>
         </div>

@@ -5,7 +5,7 @@ namespace AdminSide.Model
 {
     public class AllProperties
     {
-        public static string CityName = "København";
+        public static string CityName = "DB1";
         public static string CurrentAction = "Null";
         public static int ResultValue = -50;
         Database.VMStatus Ustatus = new Database.VMStatus();

@@ -10,7 +10,7 @@ namespace AdminSide.Database
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var conn = config.GetConnectionString("AdminLoginDB");
+            var conn = config.GetConnectionString("ConnectionString");
 
             using (var connection = new SqlConnection(conn))
             {

@@ -16,7 +16,6 @@ namespace AdminSide.Pages
             return Page();
         }
         Database.CreateProduct CP = new Database.CreateProduct();
-        Show_resultModel SAM = new Show_resultModel();
 
         [BindProperty]
         public string ProductName { get; set; }
@@ -38,7 +37,7 @@ namespace AdminSide.Pages
 
         public IActionResult OnPostCreateProduct()
         {
-            Model.AllProperties.ResultValue = CP.CreatingProduct(Model.AllProperties.CityName, ProductName, URL, Price, Stock, BrandID, TypeID);
+            Model.AllProperties.ResultValue = CP.CreatingProduct(ProductName, URL, Price, Stock, BrandID, TypeID);
             return RedirectToPage("/Show_result");
         }
     }

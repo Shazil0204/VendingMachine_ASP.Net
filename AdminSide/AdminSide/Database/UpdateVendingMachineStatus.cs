@@ -10,14 +10,14 @@ namespace AdminSide.Database
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var conn = config.GetConnectionString("AllVendingMachinesDB");
+            var conn = config.GetConnectionString("ConnectionString"); // Change this to ConnectionString thanks!
 
             using (var connection = new SqlConnection(conn))
             {
-                using (var command = new SqlCommand("[dbo].[UPDATEDBSTATUS]", connection))
+                using (var command = new SqlCommand("[dbo].[UPDATINGDBSTATUS]", connection))
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@VMName", VMName);
+                    command.Parameters.AddWithValue("@DBName", VMName);
 
                     connection.Open();
                     command.ExecuteScalar();

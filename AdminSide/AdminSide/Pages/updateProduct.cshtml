@@ -7,179 +7,54 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<title>Remove City</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link href="/css/admin.css" rel="stylesheet">
-	<link href="/css/updateProduct.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>Remove City</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/admin.css" rel="stylesheet">
+    <link href="/css/updateProduct.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="center-wrapper">
-		<div class="Create-container">
-			<div class="Create-box">
+    <div class="center-wrapper">
+        <div class="Create-container">
+            <div class="Create-box">
 
-				<h2>Update a Product</h2>
+                <h2>Create a Product</h2>
 
-				<p class="Info">Enter the new information on the product you want to update</p>
+                <p class="Info">Enter the new information on the product you want to Update</p>
 
-				<div id="first-step" class="visible">
+                <form method="post" asp-page-handler="CreateProduct" id="first-step" class="visible">
 
-					<input type="text" style="text-align:center;" value="VendingMachine" text readonly>
+                    <input type="text" style="text-align:center;" value="@AdminSide.Model.AllProperties.CityName" text
+                        readonly>
 
-					<input type="text" placeholder="Old product">
+                    <input type="text" style="text-align:center;" name="ProductName" placeholder="Product Name" required/>
 
-					<div class="d-flex">
+                    <input type="text" style="text-align:center;" name="URL" placeholder="URL" required/>
 
-						<a asp-page="/Admin" style="width:50%;">
+                    <input type="number" style="text-align:center;" name="Stock" placeholder="stock" required/>
 
-							<button type="submit" style="margin-top: 1vh; height: 5vh;" onclick="UPVMBack()">Back</button>
+                    <input type="number" style="text-align:center;" name="Price" placeholder="Price" required/>
 
-						</a>
+                    <input type="number" style="text-align:center;" name="BrandID" placeholder="Brand ID" required/>
 
-						<div style="margin: 5px;"></div>
+                    <input type="number" style="text-align:center;" name="TypeID" placeholder="Type ID" required/>
 
-						<a style="width:50%;">
+                    <button type="submit" style="margin-top: 1vh; height: 5vh;">Done</button>
+                </form>
+                <button onclick="goBack()" style="margin-top: 1vh; height: 5vh;">Back</button>
 
-						<button type="submit" style="margin-top: 1vh; height: 5vh;" onclick="UPVMNext()">Next</button>
-						</a>
-
-					</div>
-
-				</div>
-
-				<div id="second-step" class="hidden">
-
-					<input type="text" placeholder="over here C# variable for VM" />
-
-					<div class="d-flex">
-
-						<input type="text" placeholder="over here C# variable for old product" />
-
-						<div class="side-by-side"></div>
-
-						<input type="text" placeholder="New Product" />
-
-					</div>	
-
-					<div class="d-flex">
-
-						<input type="text" placeholder="over here C# variable for old URL" />
-
-						<div class="side-by-side"></div>
-
-						<input type="text" placeholder="New URL" />
-
-					</div>
-
-					<div class="d-flex">
-
-						<input type="text" placeholder="over here C# variable for old Price" />
-
-						<div class="side-by-side"></div>
-
-						<input type="text" placeholder="New Price" />
-
-					</div>
-
-					<div class="d-flex">
-
-						<input type="text" placeholder="over here C# variable for old Stock" />
-
-						<div class="side-by-side"></div>
-
-						<input type="text" placeholder="New stock" />
-
-					</div>
-
-					<div class="d-flex">
-
-						<input type="text" placeholder="over here C# variable for old BrandID" />
-
-						<div class="side-by-side"></div>
-
-						<input type="text" placeholder="New BrandID" />
-
-					</div>
-
-					<div class="d-flex">
-
-						<input type="text" placeholder="over here C# variable for old Product Type" />
-
-						<div class="side-by-side"></div>
-
-						<input type="text" placeholder="New Product Type" />
-
-					</div>
-
-					<div class="d-flex">
-
-						<input type="text" placeholder="over here C# variable for old Stock" />
-
-						<div class="side-by-side"></div>
-
-						<input type="text" placeholder="New Stock" />
-
-					</div>
-
-					<div class="d-flex">
-
-						<button type="submit" style="margin-top: 1vh; height: 5vh; width:50%" onclick="BackToPName()">Back</button>
-
-						<div style="margin: 5px;"></div>
-
-						<a style="width:50%;">
-
-						<button type="submit" style="margin-top: 1vh; height: 5vh;" onclick="UPVMContinue()">Next</button>
-						</a>
-
-					</div>
-
-				</div>
-
-				<script>
-					function UPVMNext() {
-						// Get references to the first-step and second-step divs
-						var firstStepDiv = document.getElementById("first-step");
-						var secondStepDiv = document.getElementById("second-step");
-
-						// Check if the first-step div is currently visible
-						if (firstStepDiv.style.display !== "none") {
-							// Hide the first-step div and show the second-step div
-							firstStepDiv.style.display = "none";
-							secondStepDiv.style.display = "block";
-						} else {
-							// If the first-step div is already hidden, you can choose to handle this case as needed
-							// For example, you can do nothing or show an error message.
-						}
-					}
-				</script>
-
-				<script>
-					function BackToPName() {
-						// Get references to the first-step and second-step divs
-						var firstStepDiv = document.getElementById("first-step");
-						var secondStepDiv = document.getElementById("second-step");
-
-						// Check if the first-step div is currently visible
-						if (secondStepDiv.style.display !== "none") {
-							// Hide the first-step div and show the second-step div
-							secondStepDiv.style.display = "none";
-							firstStepDiv.style.display = "block";
-						} else {
-							// If the first-step div is already hidden, you can choose to handle this case as needed
-							// For example, you can do nothing or show an error message.
-						}
-					}
-				</script>
-
-
-			</div>
-		</div>
-	</div>
+                <script>
+                    function goBack() {
+                        window.history.back(); // Or you can redirect to a specific URL
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
 
 </body>
 

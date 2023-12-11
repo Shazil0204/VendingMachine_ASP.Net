@@ -4,12 +4,13 @@ using System.Data.SqlClient;
 
 namespace AdminSide.Database
 {
-    public class CreateVendingMachine
+    public class DeleteCity
     {
         private string _connectionString;
 
-        public int CreateVM(string dbName, string cityName)
+        public int DeletingCity(string dbName)
         {
+
             var config = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json")
                             .Build();
@@ -17,13 +18,12 @@ namespace AdminSide.Database
      
             using (var connection = new SqlConnection(_connectionString))
             {
-                var command = new SqlCommand("CREATINGVM", connection)
+                var command = new SqlCommand("DELETINGCITY", connection)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
 
-                command.Parameters.Add(new SqlParameter("@DBName", SqlDbType.VarChar) { Value = dbName });
-                command.Parameters.Add(new SqlParameter("@CityName", SqlDbType.VarChar) { Value = cityName });
+                command.Parameters.Add(new SqlParameter("@City", SqlDbType.VarChar) { Value = dbName });
 
                 try
                 {

@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace AdminSide.Database
 {
-    public class CreateProduct
+    public class UpdateProductType
     {
-        internal int CreatingProduct(string productName, string URL, int price, int stock, int brandID, int typeID)
+        internal int UpdatingPT(string oldPT, string newPT)
         {
             var config = new ConfigurationBuilder()
                    .AddJsonFile("appsettings.json")
@@ -16,16 +16,11 @@ namespace AdminSide.Database
 
             using (var connection = new SqlConnection(conn))
             {
-                using (var cmd = new SqlCommand("[dbo].[CREATINGPRODUCT]", connection))
+                using (var cmd = new SqlCommand("[dbo].[UPDATINGPRODUCTTYPE]", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@DBName", Model.AllProperties.CityName));
-                    cmd.Parameters.Add(new SqlParameter("@ProductName", productName));
-                    cmd.Parameters.Add(new SqlParameter("@ProductURL", URL));
-                    cmd.Parameters.Add(new SqlParameter("@Stock", stock));
-                    cmd.Parameters.Add(new SqlParameter("@Price", price));
-                    cmd.Parameters.Add(new SqlParameter("@BrandID", brandID));
-                    cmd.Parameters.Add(new SqlParameter("@TypeID", typeID));
+                    cmd.Parameters.Add(new SqlParameter("@ProductType", oldPT));
+                    cmd.Parameters.Add(new SqlParameter("@NewTypeName", newPT));
 
                     try
                     {
@@ -40,7 +35,7 @@ namespace AdminSide.Database
                         return -1; // Indicate error
                     }
                 }
-            }
+            }   
         }
     }
 }

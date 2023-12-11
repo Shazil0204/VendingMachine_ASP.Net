@@ -14,14 +14,14 @@ namespace AdminSide.Database
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var conn = config.GetConnectionString("AllVendingMachinesDB");
+            var conn = config.GetConnectionString("ConnectionString");
 
             using (SqlConnection con = new SqlConnection(conn))
             {
                 using (SqlCommand cmd = new SqlCommand("READINGVMSTATUS", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@VMName", VMName));
+                    cmd.Parameters.Add(new SqlParameter("@DBName", VMName));
 
                     try
                     {

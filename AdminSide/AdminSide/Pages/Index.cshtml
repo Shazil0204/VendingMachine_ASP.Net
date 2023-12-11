@@ -4,7 +4,6 @@
 
 @{
     ViewData["Title"] = "Kroells Vending";
-    decimal balance = 500.00m;
     Database.Product p = new Database.Product();
     p.GetProducts();
 }
@@ -92,7 +91,8 @@
     <div class="display">
         <article class="display-item">
 
-    <p class="bal">Balance: @balance Kr </p>
+<!-- gets filled by javascript -->
+    <p class="bal"></p>
     <p class="total"></p>
 
         </article>

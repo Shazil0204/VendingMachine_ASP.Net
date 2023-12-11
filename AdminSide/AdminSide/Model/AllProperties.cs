@@ -5,7 +5,7 @@ namespace AdminSide.Model
 {
     public class AllProperties
     {
-        public static string CityName = "DB1";
+        public static string CityName = "MainVM";
         public static string CurrentAction = "Null";
         public static int ResultValue = -50;
         Database.VMStatus Ustatus = new Database.VMStatus();
@@ -15,12 +15,12 @@ namespace AdminSide.Model
         {
             bool VMS = Ustatus.ReadingVMStatus(CityName);
 
-            return VMS; 
+            return VMS;
         }
+
         internal void ChangeStatus()
         {
             Rstatus.UpdateVMStatus(CityName);
         }
     }
 }
-    

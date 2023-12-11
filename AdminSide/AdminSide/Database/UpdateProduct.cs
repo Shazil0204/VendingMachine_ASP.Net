@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace AdminSide.Database
 {
-    public class CreateProduct
+    public class updateProduct
     {
-        internal int CreatingProduct(string productName, string URL, int price, int stock, int brandID, int typeID)
+        internal int UpdatingProduct(string ProductName, string ProductURL, int stock, int price, int brandID, int typeID)
         {
             var config = new ConfigurationBuilder()
                    .AddJsonFile("appsettings.json")
@@ -16,12 +16,12 @@ namespace AdminSide.Database
 
             using (var connection = new SqlConnection(conn))
             {
-                using (var cmd = new SqlCommand("[dbo].[CREATINGPRODUCT]", connection))
+                using (var cmd = new SqlCommand("[dbo].[UPDATTINGPRODUCT]", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@DBName", Model.AllProperties.CityName));
-                    cmd.Parameters.Add(new SqlParameter("@ProductName", productName));
-                    cmd.Parameters.Add(new SqlParameter("@ProductURL", URL));
+                    cmd.Parameters.Add(new SqlParameter("@DBName", AdminSide.Model.AllProperties.CityName));
+                    cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName));
+                    cmd.Parameters.Add(new SqlParameter("@ProductURL", ProductURL));
                     cmd.Parameters.Add(new SqlParameter("@Stock", stock));
                     cmd.Parameters.Add(new SqlParameter("@Price", price));
                     cmd.Parameters.Add(new SqlParameter("@BrandID", brandID));
@@ -40,7 +40,7 @@ namespace AdminSide.Database
                         return -1; // Indicate error
                     }
                 }
-            }
+            }   
         }
     }
 }

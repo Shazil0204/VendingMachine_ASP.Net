@@ -15,11 +15,11 @@ namespace AdminSide.Database
 			   .AddJsonFile("appsettings.json")
 			   .Build();
 
-			var conn = config.GetConnectionString("AllVendingMachinesDB");
+			var conn = config.GetConnectionString("ConnectionString");
 
 			using (SqlConnection connection = new SqlConnection(conn))
 			{
-				SqlCommand command = new SqlCommand("SHOWALLVENDINGMACHINES", connection);
+				SqlCommand command = new SqlCommand("SHOWALLDBRECORDS", connection);
 				command.CommandType = System.Data.CommandType.StoredProcedure;
 
 				try

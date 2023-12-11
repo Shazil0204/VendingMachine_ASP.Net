@@ -12,15 +12,15 @@ namespace AdminSide.Database
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var conn = config.GetConnectionString("AllVendingMachinesDB");
+            var conn = config.GetConnectionString("ConnectionString");
 
             using (var connection = new SqlConnection(conn))
             {
-                using (var cmd = new SqlCommand("[dbo].[UPDATINGCITYNAME]", connection))
+                using (var cmd = new SqlCommand("[dbo].[UPDATINGCITY]", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@OLDCITYNAME", oldCityName));
-                    cmd.Parameters.Add(new SqlParameter("@NEWCITYNAME", newCityName));
+                    cmd.Parameters.Add(new SqlParameter("@City", oldCityName));
+                    cmd.Parameters.Add(new SqlParameter("@NewCityName", newCityName));
 
                     try
                     {

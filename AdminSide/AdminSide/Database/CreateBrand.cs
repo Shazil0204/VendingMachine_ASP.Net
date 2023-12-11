@@ -12,15 +12,14 @@ namespace AdminSide.Database
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var conn = config.GetConnectionString("AllVendingMachinesDB");
+            var conn = config.GetConnectionString("ConnectionString");
 
             using (var connection = new SqlConnection(conn))
             {
                 using (var cmd = new SqlCommand("[dbo].[CREATINGBRAND]", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@VMName", AdminSide.Model.AllProperties.CityName));
-                    cmd.Parameters.Add(new SqlParameter("@BrandName", brandName));
+                    cmd.Parameters.Add(new SqlParameter("@ProductBrand", brandName));
 
                     try
                     {

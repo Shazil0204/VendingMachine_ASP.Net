@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace AdminSide.Database
 {
@@ -12,14 +13,14 @@ namespace AdminSide.Database
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var conn = config.GetConnectionString("AllVendingMachinesDB");
+            var conn = config.GetConnectionString("ConnectionString");
 
             using (var connection = new SqlConnection(conn))
             {
-                using (var cmd = new SqlCommand("[dbo].[INSERTCITY]", connection))
+                using (var cmd = new SqlCommand("[dbo].[CREATINGCITY]", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@City", name));
+                    cmd.Parameters.Add(new SqlParameter("@CityName", name));
 
                     try
                     {
@@ -30,7 +31,7 @@ namespace AdminSide.Database
                     catch (SqlException ex)
                     {
                         // Handle exceptions here
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine($"Error: {ex.Message}");
                         return -1; // Indicate error
                     }
                 }

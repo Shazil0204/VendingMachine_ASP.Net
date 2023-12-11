@@ -20,9 +20,12 @@ namespace AdminSide.Pages
         [BindProperty]
         public string CityName { get; set; }
 
+        [BindProperty]
+        public string DBName { get; set; }
+
         public IActionResult OnPostCreateVendingMachine()
         {
-            Model.AllProperties.ResultValue = CVM.CreateVM(CityName);
+            Model.AllProperties.ResultValue = CVM.CreateVM(DBName, CityName);
             return RedirectToPage("/Show_result");
         }
     }
